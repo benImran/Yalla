@@ -14,6 +14,9 @@ security:
             security: false
 
         main:
+            guard:
+                authenticators:
+                    - app.security.login_form_authenticator
             anonymous: ~
             # activate different ways to authenticate
 
