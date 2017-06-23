@@ -1,19 +1,16 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: benchaa
- * Date: 22/06/2017
- * Time: 10:53
- */
 
 namespace AppBundle\Entity;
 
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="partner")
+ * @Vich\Uploadable
  */
 class Partner
 {
@@ -24,6 +21,52 @@ class Partner
      */
     private $id;
 
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $url;
+
+
+    /**
+     * @ORM\Column(type="string", length=50)
+     */
+    private $alt;
+
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @var string
+     */
+    private $image;
+
+    /**
+     * @Vich\UploadableField(mapping="product_images", fileNameProperty="image")
+     * @var File
+     */
+    private $imageFile;
+
+    /**
+     * @ORM\Column(type="datetime")
+     * @var \DateTime
+     */
+    private $updatedAt;
+
+
+
+    public function setImageFile(File $image = null)
+    {
+        $this->imageFile = $image;
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($image) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+
+
 
     /**
      * @return mixed
@@ -33,10 +76,6 @@ class Partner
         return $this->id;
     }
 
-    /**
-     * @ORM\Column(type="string")
-     */
-    private $url;
 
     /**
      * @return mixed
@@ -55,35 +94,6 @@ class Partner
         return $this;
     }
 
-    /**
-     * @ORM\Column(type="string")
-     */
-    private $img;
-
-
-    /**
-     * @return mixed
-     */
-    public function getImg()
-    {
-        return $this->img;
-    }
-
-    /**
-     * @param mixed $img
-     */
-    public function setImg($img)
-    {
-        $this->img = $img;
-        return $this;
-    }
-
-
-
-    /**
-     * @ORM\Column(type="string", length=50)
-     */
-    private $alt;
 
     /**
      * @return mixed
@@ -100,5 +110,20 @@ class Partner
     {
         $this->alt = $alt;
         return $this;
+    }
+
+    public function getImageFile()
+    {
+        return $this->imageFile;
+    }
+
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+    public function getImage()
+    {
+        return $this->image;
     }
 }
