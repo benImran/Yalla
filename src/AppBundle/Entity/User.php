@@ -23,7 +23,8 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="string", unique=true)
      */
-    private $email;
+    private $username;
+
 
     /**
      * Returns the username used to authenticate the user.
@@ -32,7 +33,7 @@ class User implements UserInterface
      */
     public function getUsername()
     {
-        return $this->email;
+        return $this->username;
     }
 
     /**
@@ -94,11 +95,12 @@ class User implements UserInterface
     }
 
     /**
-     * @param mixed $email
+     * @param mixed $username
      */
-    public function setEmail($email)
+    public function setUsername($username)
     {
-        $this->email = $email;
+        $this->username = $username;
         return $this;
     }
+
 }
