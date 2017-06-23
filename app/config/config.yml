@@ -91,6 +91,8 @@ easy_admin:
                     - url
                     - alt
                     - { property: 'imageFile', type: 'vich_image' }
+        User:
+            class: AppBundle\Entity\User
 
 vich_uploader:
     db_driver: orm
