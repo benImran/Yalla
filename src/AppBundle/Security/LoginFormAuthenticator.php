@@ -23,14 +23,17 @@ use Symfony\Component\Security\Http\Util\TargetPathTrait;
 class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
 {
     use TargetPathTrait;
+
     /**
      * @var FormFactoryInterface
      */
     private $formFactory;
+  
     /**
      * @var EntityManager
      */
     private $em;
+  
     /**
      * @var RouterInterface
      */
@@ -41,7 +44,6 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
      */
     public function __construct(FormFactoryInterface $formFactory, EntityManager $em, RouterInterface $router)
     {
-
         $this->formFactory = $formFactory;
         $this->em = $em;
         $this->router = $router;
@@ -56,9 +58,8 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
         $form = $this->formFactory->create(LoginForm::class);
         $form->handleRequest($request);
         $data = $form->getData();
+      
         return $data;
-
-
     }
 
     public function getUser($credentials, UserProviderInterface $userProvider)
@@ -72,27 +73,25 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
     protected function getLoginUrl()
     {
         return $this->router->generate('security_login');
-
     }
 
     public function checkCredentials($credentials, UserInterface $user)
     {
         $password = $credentials['_password'];
 
-        if ($password == "benben") {
+        if ($password === "benben") {
             return true;
         }
 
         return false;
     }
 
-
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey)
     {
         $targetPath = $this->getTargetPath($request->getSession(), $providerKey);
 
         if (!$targetPath) {
-            $targetPath = $this->router->generate('admin');
+            $targetPath = $this->router->generate("homepage");
         }
 
         return new RedirectResponse($targetPath);

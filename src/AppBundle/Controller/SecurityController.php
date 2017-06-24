@@ -29,7 +29,7 @@ class SecurityController extends Controller
             'security/login.html.twig',
             array(
                 'form' => $form->createView(),
-                'error'         => $error,
+                'error' => $error,
             )
         );
     }

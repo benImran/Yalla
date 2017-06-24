@@ -118,6 +118,11 @@ class User implements UserInterface
         $this->plainPassword = null;
     }
 
+    public function getId()
+    {
+        return $this->id;
+    }
+
     /**
      * @param mixed $username
      */

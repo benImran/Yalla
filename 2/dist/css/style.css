@@ -1,0 +1,178 @@
+.aboutus, .contexte, .equipe, .fonctionnement{
+	padding-left: 330px;
+	width: calc(100% - 330px);
+	overflow: hidden;
+}
+.philosophie{
+	padding-left: 500px;
+	width: calc(100% - 500px);
+	overflow: hidden;
+}
+.aboutus h1{
+	font-family: "Open Sans";
+	font-weight: 700;
+	color: black;
+	font-size:49px;
+	margin-bottom:5.5%;
+}
+.aboutus h2, .contexte div h2, .philosophie h2, .fonctionnement div h2{
+	font-family: "Open Sans";
+	font-weight: 800;
+	color: #F38C3E;
+	font-size:14px;
+	margin-bottom:2%;
+	text-transform: uppercase;
+}
+.aboutus div.background{
+	background: url("../../dist/img/img-content/aboutus1.jpg") no-repeat;
+	width: 48%;
+	height:64%;
+	margin: 14% 0 2%;
+	float: left;
+}
+.aboutus div.text{
+	width: 45%;
+	position: absolute;
+	margin: 18% 0 0 29%;
+}
+.aboutus div.text p{
+	width: 40%;
+	float: left;
+	padding: 2%;
+}
+.aboutus div.text p:nth-child(2){
+	margin-top: 1%;
+}
+.aboutus div.text p span, .contexte div p span, .philosophie p span {
+	font-weight: 700;
+	font-size: 38px;
+}
+.aboutus a{
+	display: block;
+	clear: both;
+	text-align: center;
+	color: #F38C3E;
+	border: 1px solid #F38C3E;
+	width: 90px;
+	padding: 1%;
+	font-family: "Open Sans";
+	font-size:12px;
+	margin: 0 39%;
+	cursor: pointer;
+}
+
+
+.contexte{
+	margin:10% 0 8%;
+}
+.contexte div:first-child{
+	width:38%;
+	float: left;
+}
+.contexte div:first-child p {
+	 width: 84%;
+ }
+.contexte div h2 {
+	margin-bottom:9%;
+}
+.contexte div img{
+	margin:16% 0 20%;
+}
+.contexte div.do-more{
+	width: 80%;
+	position: absolute;
+	text-align: left;
+}
+.contexte div.do-more span{
+	margin-left:2%;
+}
+.contexte div.do-more:after {
+	content: "";
+	display: inline-block;
+	margin: 0 7px;
+	width: 30%;
+	height: 1px;
+	background: #979797;
+	vertical-align: middle;
+}
+.contexte div.do-more i {
+	display: inline-block;
+	margin: 0 30px;
+}
+.contexte div .background{
+	background: url("../../dist/img/img-content/aboutus2.png") no-repeat;
+	width: 37%;
+	height:100%;
+}
+.contexte div:nth-child(2) p{
+	padding-top: 46%;
+	width: 98%;
+	font-style: italic;
+	color: #7C7C80;
+	line-height: 21px;
+	font-size: 15px;
+	font-family: inherit;
+}
+
+
+.philosophie div{
+	width: 35%;
+	float: left;
+	margin-left: 8%;
+}
+.philosophie div p{
+	margin-top:6%;
+}
+.philosophie div p:nth-child(2) {
+	margin-top:8%;
+}
+
+
+.equipe h3{
+	text-transform: uppercase;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 800;
+	margin: 0% 0 6%;
+	font-size: 23px;
+	text-decoration: underline #F38C3E ;
+	margin-right:4%;
+}
+.equipe div{
+	display: flex;
+	justify-content: flex-end;
+	margin-right:4%;
+	align-items: flex-start;
+}
+.equipe div div {
+	flex-direction: column;
+	width: 20%;
+	margin-left: 1%;
+}
+.equipe div div h4{
+	font-size: 14px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 800;
+	color:black;
+	margin:11% 0 4%;
+}
+.equipe div div p{
+	font-size: 13px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-style: italic;
+	color: #7C7C80;
+}
+
+
+.fonctionnement div {
+	text-align: center;
+	margin-right:4%;
+}
+.fonctionnement div p{
+	font-family: 'Cardo';
+	font-size: 47px;
+	line-height: 61px;
+	width: 85%;
+	margin: 0 auto;
+}
