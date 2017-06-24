@@ -1,6 +1,6 @@
-.aboutus, .contexte, .equipe, .fonctionnement{
-	padding-left: 330px;
-	width: calc(100% - 330px);
+.aboutus, .contexte, .equipe, .fonctionnement, .titre{
+	padding-left: 300px;
+	width: calc(100% - 300px);
 	overflow: hidden;
 }
 .philosophie{
@@ -15,7 +15,7 @@
 	font-size:49px;
 	margin-bottom:5.5%;
 }
-.aboutus h2, .contexte div h2, .philosophie h2, .fonctionnement div h2{
+.aboutus h2, .contexte div h2, .philosophie h2, .fonctionnement div h2, .titre div h2{
 	font-family: "Open Sans";
 	font-weight: 800;
 	color: #F38C3E;
@@ -43,7 +43,7 @@
 .aboutus div.text p:nth-child(2){
 	margin-top: 1%;
 }
-.aboutus div.text p span, .contexte div p span, .philosophie p span {
+.aboutus div.text p span, .contexte div p span, .philosophie p span, .titre div p span {
 	font-weight: 700;
 	font-size: 38px;
 }
@@ -127,7 +127,9 @@
 	margin-top:8%;
 }
 
-
+.equipe{
+	height: 90vh;
+}
 .equipe h3{
 	text-transform: uppercase;
 	text-align: center;
@@ -164,7 +166,9 @@
 	color: #7C7C80;
 }
 
-
+.fonctionnement{
+	height:50vh;
+}
 .fonctionnement div {
 	text-align: center;
 	margin-right:4%;
@@ -175,4 +179,53 @@
 	line-height: 61px;
 	width: 85%;
 	margin: 0 auto;
+}
+
+
+.titre{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	height:120vh;
+}
+.titre div h2{
+	margin:13% 0 7% 7%;
+}
+.titre div {
+	width:42%;
+}
+.titre div:first-child{
+	order:2;
+	width:55%;
+}
+.titre div:first-child p {
+	width:57%;
+	margin: 0 0 12% 7%;
+}
+.titre div:first-child img {
+	width:73%;
+}
+.titre div:nth-child(2){
+	text-align: center;
+}
+.titre div:nth-child(2) img{
+	margin-bottom:35%;
+}
+.titre div:nth-child(2) .guillemet{
+	font-family: 'Cardo';
+	font-size: 106px;
+	color: #F38C3E;
+	width:inherit;
+	margin-left:30%;
+}
+.titre div:nth-child(2) p {
+	font-family: 'Cardo';
+	font-size: 26px;
+	line-height: 31px;
+	width:70%;
+	margin-left:15%;
+}
+
+@media screen and (max-width: 1140px) {
+
 }
