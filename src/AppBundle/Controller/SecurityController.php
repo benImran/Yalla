@@ -6,15 +6,15 @@ use AppBundle\Form\LoginForm;
 use Doctrine\ORM\Mapping as ORM;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SecurityController extends Controller
 {
     /**
      * @Route("/login", name="security_login")
      */
-    public function loginAction()
+    public function loginAction(AuthenticationUtils $authenticalUtils)
     {
-        $authenticalUtils = $this->get('security.authentication_utils');
         // get the login error if there is one
         $error = $authenticalUtils->getLastAuthenticationError();
 
@@ -22,7 +22,7 @@ class SecurityController extends Controller
         $lastUsername = $authenticalUtils->getLastUsername();
 
         $form = $this->createForm(LoginForm::class, [
-            'username' => $lastUsername
+            '_username' => $lastUsername
         ]);
 
         return $this->render(

@@ -40,12 +40,9 @@ class User implements UserInterface
      */
     private $plainPassword;
 
-    /**
-     * @return string
-     */
-    public function getPlainPassword()
+    public function getId()
     {
-        return $this->plainPassword;
+        return $this->id;
     }
 
     /**
@@ -56,6 +53,27 @@ class User implements UserInterface
     public function getUsername()
     {
         return $this->username;
+    }
+
+    /**
+     * Returns the password used to authenticate the user.
+     *
+     * This should be the encoded password. On authentication, a plain-text
+     * password will be salted, encoded, and then compared to this value.
+     *
+     * @return string The password
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
     }
 
     /**
@@ -80,19 +98,6 @@ class User implements UserInterface
     }
 
     /**
-     * Returns the password used to authenticate the user.
-     *
-     * This should be the encoded password. On authentication, a plain-text
-     * password will be salted, encoded, and then compared to this value.
-     *
-     * @return string The password
-     */
-    public function getPassword()
-    {
-        return $this->password;
-    }
-
-    /**
      * Returns the salt that was originally used to encode the password.
      *
      * This can return null if the password was not encoded using a salt.
@@ -113,11 +118,6 @@ class User implements UserInterface
     public function eraseCredentials()
     {
         $this->plainPassword = null;
-    }
-
-    public function getId()
-    {
-        return $this->id;
     }
 
     /**
