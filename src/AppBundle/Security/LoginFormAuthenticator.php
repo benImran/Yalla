@@ -2,11 +2,12 @@
 
 
 namespace AppBundle\Security;
-/*alooooooooo*/
+
 
 use AppBundle\AppBundle;
 use AppBundle\Entity\User;
 use AppBundle\Form\LoginForm;
+use AppBundle\Repository\UserRepository;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -21,6 +22,7 @@ use Symfony\Component\Security\Http\Util\TargetPathTrait;
 
 class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
 {
+    use TargetPathTrait;
     /**
      * @var FormFactoryInterface
      */
@@ -40,24 +42,20 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
     public function __construct(FormFactoryInterface $formFactory, EntityManager $em, RouterInterface $router)
     {
 
-        $this->formFacory = $formFactory;
+        $this->formFactory = $formFactory;
         $this->em = $em;
         $this->router = $router;
     }
 
     public function getCredentials(Request $request)
     {
-       $isLoginSubmit = $request->getPathInfo() == '/login' && $request->isMethod('POST');
-
+        $isLoginSubmit = $request->getPathInfo() == "/login" && $request->isMethod("POST");
         if (!$isLoginSubmit) {
-            return;
+            return null;
         }
-
         $form = $this->formFactory->create(LoginForm::class);
         $form->handleRequest($request);
-
         $data = $form->getData();
-
         return $data;
 
 
@@ -65,10 +63,10 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
 
     public function getUser($credentials, UserProviderInterface $userProvider)
     {
-        $username = $credentials['_username'];
+        $username = $credentials["_username"];
 
-        return $this->em->getRepository('AppBundle::User')
-            ->findOneBy(['username' => $username]);
+        return $this->em->getRepository("AppBundle:User")
+            ->findOneBy(["username" => $username]);
     }
 
     protected function getLoginUrl()
@@ -79,23 +77,22 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
 
     public function checkCredentials($credentials, UserInterface $user)
     {
-        $password = $credentials['password'];
+        $password = $credentials['_password'];
 
-        if ($password == 'benben') {
+        if ($password == "benben") {
             return true;
         }
 
         return false;
     }
 
-    use TargetPathTrait;
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey)
     {
         $targetPath = $this->getTargetPath($request->getSession(), $providerKey);
 
         if (!$targetPath) {
-            $targetPath = $this->router->generate('homepage');
+            $targetPath = $this->router->generate('admin');
         }
 
         return new RedirectResponse($targetPath);

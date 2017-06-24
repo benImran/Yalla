@@ -91,6 +91,8 @@ easy_admin:
                     - url
                     - alt
                     - { property: 'imageFile', type: 'vich_image' }
+            User:
+                class: AppBundle\Entity\User
 
 vich_uploader:
     db_driver: orm
@@ -98,3 +100,9 @@ vich_uploader:
             product_images:
                 uri_prefix:         '%app.path.product_images%'
                 upload_destination: '%kernel.root_dir%/../web/uploads/images/partners'
+
+doctrine_migrations:
+    dir_name: "%kernel.root_dir%/DoctrineMigrations"
+    namespace: Application\Migrations
+    table_name: migration_versions
+    name: Application Migrations
