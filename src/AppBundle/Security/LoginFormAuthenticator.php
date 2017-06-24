@@ -2,7 +2,7 @@
 
 
 namespace AppBundle\Security;
-/*alooooooooo*/
+
 
 use AppBundle\AppBundle;
 use AppBundle\Entity\User;
@@ -28,10 +28,12 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
      * @var FormFactoryInterface
      */
     private $formFactory;
+  
     /**
      * @var EntityManager
      */
     private $em;
+  
     /**
      * @var RouterInterface
      */
@@ -49,20 +51,15 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
 
     public function getCredentials(Request $request)
     {
-       $isLoginSubmit = $request->getPathInfo() == "/login" && $request->isMethod("POST");
-
+        $isLoginSubmit = $request->getPathInfo() == "/login" && $request->isMethod("POST");
         if (!$isLoginSubmit) {
             return null;
         }
-
         $form = $this->formFactory->create(LoginForm::class);
         $form->handleRequest($request);
-
         $data = $form->getData();
-
+      
         return $data;
-
-
     }
 
     public function getUser($credentials, UserProviderInterface $userProvider)
@@ -76,14 +73,13 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
     protected function getLoginUrl()
     {
         return $this->router->generate('security_login');
-
     }
 
     public function checkCredentials($credentials, UserInterface $user)
     {
-        $password = $credentials["_password"];
+        $password = $credentials['_password'];
 
-        if ($password == "benben") {
+        if ($password === "benben") {
             return true;
         }
 
