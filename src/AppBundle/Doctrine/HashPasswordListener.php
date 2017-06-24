@@ -56,7 +56,6 @@ class HashPasswordListener implements EventSubscriber
             $entity->getPlainPassword()
         );
         $entity->setPassword($encoded);
-        
     }
 
     public function preUpdate(LifecycleEventArgs $args)

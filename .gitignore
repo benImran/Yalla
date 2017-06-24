@@ -1,4 +1,5 @@
 .idea
+app/DoctrineMigrations
 
 /.web-server-pid
 /app/config/parameters.yml

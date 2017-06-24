@@ -48,8 +48,6 @@ class User implements UserInterface
         return $this->plainPassword;
     }
 
-
-
     /**
      * Returns the username used to authenticate the user.
      *
@@ -105,7 +103,6 @@ class User implements UserInterface
     {
 
     }
-
 
     /**
      * Removes sensitive data from the user.
