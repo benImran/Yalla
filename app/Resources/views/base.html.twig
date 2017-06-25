@@ -1,15 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         {% block stylesheets %}
-            <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/styles.min.css') }}">
         {% endblock %}
+        {% block fonts %}
+            <link href="https://fonts.googleapis.com/css?family=Cardo:400,700" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
+        {% endblock %}
+        <title>{% block title %}Yalla pour les enfants{% endblock %}</title>
     </head>
+
     <body>
         {% block body %}{% endblock %}
 
-        {% block javascripts %}{% endblock %}
+        {% block footer %}{% endblock %}
+
+        {% block javascripts %}
+            <script src="{{ asset('js/app.min.js') }}"></script>
+        {% endblock %}
     </body>
+
 </html>
