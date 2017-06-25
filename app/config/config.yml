@@ -7,7 +7,8 @@ imports:
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: fr_FR
-    app.path.product_images: /uploads/images/partners
+    app.path.partner_images: /uploads/images/partners
+    app.path.article_images: /uploads/images/articles
 
 framework:
     #esi: ~
@@ -80,12 +81,12 @@ easy_admin:
                 fields:
                     - url
                     - alt
-                    - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.partner_images%' }
             show:
                 fields:
                     - url
                     - alt
-                    - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.partner_images%' }
             form:
                 fields:
                     - url
@@ -98,13 +99,49 @@ easy_admin:
                     - username
                     - plainPassword
                     - { property: 'roles', type: 'collection' }
+        Article:
+            class: AppBundle\Entity\Article
+            list:
+                fields:
+                    - title
+                    - { property: 'image', type: 'image', base_path: '%app.path.article_images%' }
+                    - synopsis
+                    - body
+                    - category
+            show:
+                fields:
+                    - title
+                    - { property: 'image', type: 'image', base_path: '%app.path.article_images%' }
+                    - synopsis
+                    - body
+                    - category
+            form:
+                fields:
+                    - title
+                    - { property: 'imageFile', type: 'vich_image' }
+                    - synopsis
+                    - body
+                    - category
+
+        Category:
+            class: AppBundle\Entity\Category
+            form:
+                fields:
+                    - title
+                    - img
+                    - synopsis
+                    - body
+                    - { property: 'catagory', type: 'class'}
 
 vich_uploader:
     db_driver: orm
     mappings:
-            product_images:
-                uri_prefix:         '%app.path.product_images%'
-                upload_destination: '%kernel.root_dir%/../web/uploads/images/partners'
+        partner_images:
+            uri_prefix:         '%app.path.partner_images%'
+            upload_destination: '%kernel.root_dir%/../web/uploads/images/partners'
+        article_images:
+            uri_prefix:         '%app.path.article_images%'
+            upload_destination: '%kernel.root_dir%/../web/uploads/images/articles'
 
 doctrine_migrations:
     dir_name: "%kernel.root_dir%/DoctrineMigrations"
