@@ -9,17 +9,23 @@ use AppBundle\Entity\User;
 use AppBundle\Form\LoginForm;
 use AppBundle\Repository\UserRepository;
 use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoder;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
 use Symfony\Component\Security\Guard\Authenticator\AbstractFormLoginAuthenticator;
 use Symfony\Component\Security\Http\Util\TargetPathTrait;
 
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="login_form_authenticator")
+ */
 class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
 {
     use TargetPathTrait;
@@ -40,13 +46,24 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
     private $router;
 
     /**
+     * @ORM\Column(type="string")
+     */
+    private $passwordEncoder;
+
+
+    /**
      * LoginFormAuthenticator constructor.
      */
-    public function __construct(FormFactoryInterface $formFactory, EntityManager $em, RouterInterface $router)
+
+    public function __construct(FormFactoryInterface $formFactory, EntityManager $em, RouterInterface $router, UserPasswordEncoder $passwordEncoder)
     {
         $this->formFactory = $formFactory;
         $this->em = $em;
         $this->router = $router;
+
+//        $this->setPasswordEncoder(htmlentities($passwordEncoder));
+
+        $this->passwordEncoder = $passwordEncoder;
     }
 
     public function getCredentials(Request $request)
@@ -58,7 +75,7 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
         $form = $this->formFactory->create(LoginForm::class);
         $form->handleRequest($request);
         $data = $form->getData();
-      
+
         return $data;
     }
 
@@ -79,7 +96,7 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
     {
         $password = $credentials['_password'];
 
-        if ($password === "benben") {
+        if ($this->passwordEncoder->isPasswordValid($user, $password)) {
             return true;
         }
 
@@ -91,7 +108,7 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
         $targetPath = $this->getTargetPath($request->getSession(), $providerKey);
 
         if (!$targetPath) {
-            $targetPath = $this->router->generate("homepage");
+            $targetPath = $this->router->generate("admin");
         }
 
         return new RedirectResponse($targetPath);
@@ -102,5 +119,13 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
         // TODO: Implement __call() method.
     }
 
+    /**
+     * @param mixed $passwordEncoder
+     */
+    public function setPasswordEncoder($passwordEncoder)
+    {
+        $this->passwordEncoder = $passwordEncoder;
+        return $this;
+    }
 
 }
