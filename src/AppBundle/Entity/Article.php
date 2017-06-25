@@ -4,11 +4,10 @@
 namespace AppBundle\Entity;
 
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
-
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity(repositoryClass="AppBundle\Repository\ArticleRepository")
@@ -69,6 +68,12 @@ class Article
      * @ORM\Column(type="simple_array")
      */
     private $tags = [];
+
+    /**
+     * @Gedmo\Slug(fields={"title"}, updatable=false)
+     * @ORM\Column(type="string", unique=true, length=128)
+     */
+    private $slug;
 
     public function __toString()
     {
@@ -166,5 +171,15 @@ class Article
     public function setTags($tags)
     {
         $this->tags = $tags;
+    }
+
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
     }
 }

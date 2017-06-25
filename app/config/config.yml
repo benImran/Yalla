@@ -13,6 +13,8 @@ parameters:
 framework:
     #esi: ~
     translator: { fallbacks: ['%locale%'] }
+    default_locale: fr_FR
+
     secret: '%secret%'
     router:
         resource: '%kernel.project_dir%/app/config/routing.yml'
@@ -167,3 +169,7 @@ ivory_ck_editor:
                 - { name: 'paragraph', items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote' ] }
                 - { name: 'styles', items: [ 'Format' ] }
 
+stof_doctrine_extensions:
+    orm:
+        default:
+            sluggable: true
