@@ -4,6 +4,7 @@
 namespace AppBundle\Entity;
 
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -24,6 +25,23 @@ class Category
      */
     private $name;
 
+    /**
+     * @ORM\OneToMany(
+     *     targetEntity="AppBundle\Entity\Article",
+     *     mappedBy="category")
+     */
+    private $articles;
+
+    public function __construct()
+    {
+        $this->articles = new ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return (string) $this->getName();
+    }
+
     public function getId()
     {
         return $this->id;
@@ -39,8 +57,8 @@ class Category
         $this->name = $name;
     }
 
-    public function __toString()
+    public function getArticles()
     {
-        return (string) $this->getName();
+        return $this->articles;
     }
 }

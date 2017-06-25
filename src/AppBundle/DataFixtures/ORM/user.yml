@@ -1,5 +1,5 @@
 AppBundle\Entity\User:
     user_{1..2}:
-        username: <name()>
+        username: hk<current()>
         plainPassword: test
         roles: ['ROLE_ADMIN']

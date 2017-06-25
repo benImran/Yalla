@@ -74,6 +74,8 @@ swiftmailer:
 
 easy_admin:
     site_name: "Yalla"
+    design:
+        color_scheme: 'light'
     entities:
         Partner:
             class: AppBundle\Entity\Partner
@@ -108,6 +110,7 @@ easy_admin:
                     - synopsis
                     - body
                     - category
+                    - tags
             show:
                 fields:
                     - title
@@ -115,6 +118,7 @@ easy_admin:
                     - synopsis
                     - body
                     - category
+                    - tags
             form:
                 fields:
                     - title
@@ -122,16 +126,10 @@ easy_admin:
                     - synopsis
                     - body
                     - category
+                    - tags
 
         Category:
             class: AppBundle\Entity\Category
-            form:
-                fields:
-                    - title
-                    - img
-                    - synopsis
-                    - body
-                    - { property: 'catagory', type: 'class'}
 
 vich_uploader:
     db_driver: orm

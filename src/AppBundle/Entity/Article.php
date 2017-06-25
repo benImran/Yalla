@@ -4,8 +4,8 @@
 namespace AppBundle\Entity;
 
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-use AppBundle\Entity\Category;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
@@ -58,9 +58,22 @@ class Article
     private $body;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Category")
+     * @ORM\ManyToOne(
+     *     targetEntity="AppBundle\Entity\Category",
+     *     inversedBy="articles")
+     * @ORM\JoinColumn(nullable=true)
      */
     private $category;
+
+    /**
+     * @ORM\Column(type="simple_array")
+     */
+    private $tags = [];
+
+    public function __toString()
+    {
+        return (string) $this->getTitle();
+    }
 
     public function getId()
     {
@@ -143,5 +156,15 @@ class Article
     public function setCategory(Category $category)
     {
         $this->category = $category;
+    }
+
+    public function getTags()
+    {
+        return $this->tags;
+    }
+
+    public function setTags($tags)
+    {
+        $this->tags = $tags;
     }
 }
