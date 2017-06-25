@@ -93,6 +93,11 @@ easy_admin:
                     - { property: 'imageFile', type: 'vich_image' }
         User:
             class: AppBundle\Entity\User
+            form:
+                fields:
+                    - username
+                    - plainPassword
+                    - { property: 'roles', type: 'collection' }
 
 vich_uploader:
     db_driver: orm
