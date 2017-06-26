@@ -24,6 +24,11 @@ class Article
     private $id;
 
     /**
+     * @ORM\Column(type="boolean")
+     */
+    private $visible = true;
+
+    /**
      * @ORM\Column(type="string")
      */
     private $title;
@@ -181,5 +186,20 @@ class Article
     public function setSlug($slug)
     {
         $this->slug = $slug;
+    }
+
+    public function getVisible()
+    {
+        return $this->visible;
+    }
+
+    public function setVisible($visible)
+    {
+        $this->visible = $visible;
+    }
+
+    public function isVisible()
+    {
+        return $this->getVisible();
     }
 }
