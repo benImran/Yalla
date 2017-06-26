@@ -1,0 +1,538 @@
+// HOME
+// SECTION WELCOME
+section.welcome {
+	position: relative;
+
+	div.bckd {
+		height: 100%;
+		width: 50%;
+		background: rgba(216, 216, 216, 0.2);
+		position: absolute;
+		top: 0;
+		left: 50%;
+	}
+
+	h2 {
+		padding: 45px 0 45px 30px;
+	}
+
+	article.about {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		justify-content: space-between;
+		margin: 0 auto;
+		width: 90%;
+		position: relative;
+
+		div.photos {
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: row;
+			justify-content: space-between;
+			width: 66%;
+			height: 580px;
+
+				div.photo-content {
+					display: inline-block;
+					height: 485px;
+					width: 49%;
+				}
+
+				div.photo-content:first-child {
+					background: url('../img/img-content/yalla-kids-1.png');
+					background-size: cover;
+				}
+
+				div.photo-content:last-child {
+					background: url('../img/img-content/yalla-kids-2.png');
+					background-size: cover;
+					align-self: flex-end;
+				}
+		}
+
+		div.text {
+			width: 30%;
+			align-self: flex-end;
+
+			h3 {
+				margin-bottom: 86px;
+			}
+
+			p {
+				margin-bottom: 130px;
+			}
+		}
+
+		div.do-more {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+		}
+
+		div.do-more:before {
+			content: "";
+			display: inline-block;
+			height: 1px;
+			width: 300px;
+			background: $sn-color;
+			vertical-align: middle;
+		}
+	}
+}
+
+// SECTION CAUSE
+section.cause {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	article.cause {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		justify-content: space-between;
+		width: 60%;
+
+		div.photos {
+			width: 45%;
+			height: 295px;
+
+			div.photo {
+				height: 295px;
+				width: 100%;
+				background: url('../img/img-content/four.png') no-repeat;
+				background-size: contain;
+			}
+		}
+
+		div.text {
+			width: 45%;
+			padding-top: 10px;
+
+			h4 {
+				margin-bottom: 25px;
+			}
+
+			p {
+				margin-bottom: 35px;
+			}
+
+			a {
+				font-family: 'Caro', serif;
+				font-size: 14px;
+				color: $yalla-color;
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+// SECTION ACTIONS
+section.actions {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	article.actions {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		justify-content: space-between;
+		width: 90%;
+		position: relative;
+
+		div.text {
+			width: 40%;
+			margin-left: 10px;
+			align-self: flex-end;
+
+			h4 {
+				margin-bottom: 150px;
+			}
+
+			h3 {
+				margin-bottom: 85px;
+			}
+
+			p {
+				margin-bottom: 90px;
+			}
+
+			div.do-more {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+			}
+
+			div.do-more:after {
+				content: "";
+				display: inline-block;
+				height: 1px;
+				width: 300px;
+				background: $sn-color;
+				vertical-align: middle;
+			}
+		}
+
+		div.photos {
+			width: 50%;
+			height: 95%;
+
+			div.photo {
+				width: 100%;
+				height: 100%;
+				background: url('../img/img-content/yalla-kids-4.png');
+				background-size: cover;
+			}
+		}
+	}
+}
+
+// SECTION DONATE
+section.donate {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-left: 0;
+	background: url('../img/img-content/yalla-kids-5.png');
+	background-size: cover;
+
+	div.text {
+		width: 50%;
+		margin-left: -270px;
+		text-align: center;
+
+		h3 {
+			margin-bottom: 32px;
+			font-size: 59px;
+			color: #fff;
+		}
+
+		p {
+			margin-bottom: 60px;
+			font-size: 17px;
+			color: #fff;
+		}
+
+		a {
+			display: inline-block;
+			padding: 18px 32px;
+			background: $yalla-color;
+			border-radius: 23px;
+			font-family: 'Open sans', sans-serif;
+			font-weight: 700;
+			color: #fff;
+			text-transform: uppercase;
+		}
+	}
+}
+
+// SECTION LAST NEWS
+section.last-news {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	background: url('../img/img-content/circle-background.png') no-repeat;
+	background-position: 100% 160%;
+
+	article.last-news {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		justify-content: space-between;
+		width: 60%;
+		margin-left: 30px;
+		position: relative;
+
+		div.photos {
+			width: 45%;
+			height: 468px;
+			position: relative;
+
+			div.photo {
+				width: 100%;
+				height: 468px;
+				background: url('../img/img-content/yalla-news-1.png');
+				background-size: cover;
+			}
+
+			h3 {
+				color: #000;
+				position: absolute;
+				top: 10%;
+				left: 10%;
+			}
+		}
+
+		div.text {
+			width: 45%;
+			margin-bottom: 50px;
+			align-self: flex-end;
+
+			div.do-more {
+				position: absolute;
+				top: 10px;
+				right: 10px;
+			}
+
+			div.do-more:before {
+			content: "";
+			display: inline-block;
+			height: 1px;
+			width: 300px;
+			background: $sn-color;
+			vertical-align: middle;
+		}
+
+			p {
+				margin-bottom: 15px;
+			}
+
+			p:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+	// HOME RESPONSIVE
+	@media screen and (max-width: 768px) {
+		// SECTION WELCOME RESPONSIVE
+		section.welcome {
+
+			div.bckd {
+				display: none;
+			}
+			
+			article.about {
+				flex-direction: column;
+				justify-content: space-between;
+				margin: 0 auto;
+				width: 100%;
+				position: relative;
+
+				div.photos {
+					width: 100%;
+					height: 362px;
+					order: 2;
+
+					div.photos-container {
+						height: 362px;
+
+						div.photo-content {
+							height: 362px;
+						}
+						
+						div.photo-content:last-child {
+							align-self: auto;
+						}
+					}
+				}
+
+				div.text {
+					margin-bottom: 35px;
+					width: 100%;
+					text-align: center;
+
+					h3 {
+						margin-bottom: 85;
+					}
+
+					p {
+						margin-bottom: 78px;
+					}
+
+					div.do-more {
+						position: static;
+
+						i {
+							margin-left: 0;
+						}
+
+						span {
+							text-decoration: underline;
+						}
+					}
+
+					div.do-more:before {
+						display: none;
+					}
+				}
+			}
+		}
+
+		// SECTION CAUSE RESPONSIVE
+		section.cause {
+			text-align: center;
+
+			article.cause {
+				flex-direction: column;
+				width: 100%;
+
+				div.photos {
+					width: 100%;
+					margin-bottom: 85px;
+
+					div.photo {
+						background-position: center;
+					}
+				}
+
+				div.text {
+					width: 100%;
+
+					h4 {
+						margin-bottom: 16px;
+					}
+
+					p {
+						margin-bottom: 35px;
+					}
+
+					a {
+					}
+				}
+			}
+		}
+
+		//SECTION ACTIONS RESPONSIVE
+		section.actions {
+
+			article.actions {
+				width: 100%;
+
+				div.text {
+					width: 80%;
+					margin: 0;
+					order: 2;
+
+					div.do-more {
+						position: static;
+
+						span {
+							text-decoration: underline;
+						}
+
+						i {
+							margin-right: 0;
+						}
+					}
+
+					div.do-more:after {
+						display: none;
+					}
+				}
+
+				div.photos {
+					width: 345px;
+					margin-left: -315px;
+					order: 1;
+
+					div.photo {
+						width: 345px;
+						background-position: right;
+					}
+				}
+			}
+		}
+
+		// SECTION DONATE RESPONSIVE
+		section.donate {
+			padding: 0;
+
+			div.text {
+				width: 100%;
+				margin: 130px 0;
+
+				h3 {
+					font-size: 29px;
+				}
+
+				p {
+					line-height: 25px;
+					margin-bottom: 56px;
+				}
+			}
+		}
+
+		// SECTION LAST NEWS RESPONSIVE
+		section.last-news {
+
+			article.last-news {
+				flex-direction: column;
+				width: 100%;
+				margin-left: 0;
+
+				div.photos {
+					display: flex;
+					flex-wrap: wrap;
+					flex-direction: row;
+					width: 100%;
+					height: auto;
+					margin-bottom: 60px;
+
+					div.photo {
+						order: 2;
+					}
+
+					h3 {
+						margin-bottom: 30px;
+						position: static;
+						order: 1;
+					}
+				}
+
+				div.text {
+					display: flex;
+					flex-wrap: wrap;
+					flex-direction: column;
+					width: 100%;
+
+					div.do-more {
+						position: static;
+						order: 3;
+
+						i {
+							margin-left: 0;
+						}
+
+						span {
+							text-decoration: underline;
+						}
+					}
+
+					div.do-more:before {
+						display: none;
+					}
+
+					p:last-child {
+						margin-bottom: 40px;
+					}
+				}
+			}
+		}
+	}
+
+	@media screen and (min-width: 768px) and (max-width: 1054px) {
+		div.main {
+			section.donate {
+				div.text {
+					width: 70%;
+				}
+			}
+
+			section.last-news {
+				article.last-news {
+					width: 95%;
+				}
+			}
+		}
+	}

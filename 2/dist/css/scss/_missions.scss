@@ -1,0 +1,300 @@
+// HOME
+// SECTION STRATEGIE
+section.strategy {
+
+	h2 {
+		padding: 45px 0 45px 30px;
+	}
+
+	article.strategy {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		justify-content: space-between;
+		margin-left: 100px;
+
+		div.text {
+			width: 60%;
+
+			h4 {
+				margin-bottom: 68px;
+			}
+
+			h3 {
+				margin-bottom: 92px;
+				font-size: 59px;
+			}
+
+			h3:after {
+				content: "";
+				display: inline-block;
+				margin-left: 30px;
+				height: 1px;
+				width: 50%;
+				background: $sn-color;
+				vertical-align: middle;
+			}
+
+			div.p-container {
+				display: flex;
+				flex-wrap: wrap;
+				flex-direction: row;
+				justify-content: space-between;
+			}
+
+			p {
+				display: inline-block;
+				width: 46%;
+				text-align: justify;
+			}
+
+			p:first-child {
+				margin-right: 2%;
+			}
+		}
+
+		div.photos {
+			width: 35%;
+			height: 600px;
+
+			div.photo {
+				height: 100%;
+				background: url('../img/img-content/yalla-kids-6.jpg');
+				background-size: cover;
+			}
+		}
+	}
+}
+
+// SECTION ACTIONS
+section.actions {
+	article.actions {
+		div.text {
+			div.do-more-alt {
+				position: absolute;
+				bottom: 0;
+				right: 0;
+			}
+
+			div.do-more-alt:before {
+				content: "";
+				display: inline-block;
+				height: 1px;
+				width: 300px;
+				background: $sn-color;
+				vertical-align: middle;
+			}
+		}
+	}
+}
+
+// SECTION GOALS
+section.goals {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	article.goals {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		justify-content: space-between;
+		width: 80%;
+
+		div.text {
+			width: 40%;
+
+			h4 {
+				margin-bottom: 10px;
+			}
+
+			h3 {
+				margin-bottom: 85px;
+			}
+
+			p {
+				margin-bottom: 20px;
+			}
+
+			p:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		div.photos {
+			width: 35%;
+			height: 464px;
+
+			div.photo {
+				height: 100%;
+				background: url('../img/img-content/yalla-kids-7.png');
+				background-size: cover;
+			}
+		}
+	}
+}
+
+	// HOME RESPONSIVE
+	@media screen and (max-width: 768px) {
+		// SECTION STRATEGY RESPONSIVE
+		section.strategy {
+			article.strategy {
+				margin-left: 15px;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+
+				div.text {
+					width: 100%;
+					margin-bottom: 50px;
+					text-align: center;
+
+					h4 {
+						margin-bottom: 60px;
+					}
+
+					h3 {
+						margin-bottom: 100px;
+					}
+
+					h3:after {
+						display: none;
+					}
+
+					div.p-container {
+						flex-direction: column;
+
+						p {
+							width: 100%;
+							margin-bottom: 45px;
+						}
+
+						p:last-child {
+							margin-bottom: 0;
+						}
+					}
+				}
+
+				div.photos {
+					width: 80%;
+					div.photo {
+						width: 100%;
+					}
+				}
+			}
+		}
+
+		// SECTION ACTIONS RESPONSIVE
+		section.actions {
+			article.actions {
+				div.text {
+
+					div.do-more-alt {
+
+						span {
+							text-decoration: underline;
+						}
+					}
+
+					div.do-more-alt:before {
+						display: none;
+					}
+				}
+			}
+		}
+
+		// SECTION GOALS RESPONSIVE
+		section.goals {
+
+			article.goals {
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+				text-align: center;
+
+				div.text {
+					width: 100%;
+					margin-bottom: 50px;
+
+					h4 {
+						margin-bottom: 32px;
+					}
+
+					h3 {
+						margin-bottom: 85px;
+					}
+
+					p {
+						margin-bottom: 45px;
+					}
+
+					p:last-child {
+						margin-bottom: 0;
+					}
+				}
+
+				div.photos {
+					width: 70%;
+
+					div.photo {
+
+					}
+				}
+			}
+		}
+	}
+
+	@media screen and (min-width: 768px) and (max-width: 1044px) {
+		// SECTION STRATEGY RESPONSIVE
+		section.strategy {
+
+			article.strategy {
+
+				div.text {
+					width: 88%;
+
+					h4 {
+						margin-bottom: 45px;
+					}
+
+					h3 {
+						margin-bottom: 60px;
+					}
+				}
+
+				div.photos {
+					width: 8%;
+				}
+			}
+		}
+
+		// SECTION GOALS RESPONSIVE
+		section.goals {
+
+			article.goals {
+
+				div.text {
+					width: 60%;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 1361px) {
+		// SECTION STRATEGY RESPONSIVE
+		section.strategy {
+
+			article.strategy {
+
+				div.text {
+
+					h3:after {
+						display: none;
+					}
+				}
+			}
+		}
+	}
