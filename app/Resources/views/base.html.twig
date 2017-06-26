@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        {{ sonata_seo_metadatas() }}
         {% block stylesheets %}
             <link rel="stylesheet" href="{{ asset('css/styles.min.css') }}">
         {% endblock %}
@@ -11,7 +9,8 @@
             <link href="https://fonts.googleapis.com/css?family=Cardo:400,700" rel="stylesheet">
             <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
         {% endblock %}
-        <title>{% block title %}Yalla pour les enfants{% endblock %}</title>
+        {{ sonata_seo_link_canonical() }}
+        {{ sonata_seo_title() }}
     </head>
 
     <body>

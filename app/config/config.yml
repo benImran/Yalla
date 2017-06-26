@@ -120,12 +120,14 @@ stof_doctrine_extensions:
 sonata_seo:
     encoding:         UTF-8
     page:
-        title:            Sonata Project
+        title:            Yalla pour les enfants
         default:          sonata.seo.page.default
         metas:
+            charset:
+                UTF-8:    ''
             name:
-                keywords:             foo bar
-                description:          The description
+                viewport:             width=device-width, initial-scale=1
+                description:          Association pour les enfants syriens réfugiés au Liban
                 robots:               index, follow
 
             property:
@@ -135,15 +137,12 @@ sonata_seo:
 
                 # Open Graph information
                 # see http://developers.facebook.com/docs/opengraphprotocol/#types or http://ogp.me/
-                'og:site_name':       Sonata Project Sandbox
-                'og:description':     A demo of the some rich bundles for your Symfony2 projects
+                'og:site_name':       Yalla pour les enfants
+                'og:description':     Association pour les enfants syriens réfugiés au Liban
 
             http-equiv:
                 'Content-Type':         text/html; charset=utf-8
-                #'X-Ua-Compatible':      IE=EmulateIE7
-
-            charset:
-                UTF-8:    ''
+                'X-UA-Compatible':      ie=edge
 
         head:
             'xmlns':              http://www.w3.org/1999/xhtml
