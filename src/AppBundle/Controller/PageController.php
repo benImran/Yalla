@@ -5,13 +5,15 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-class PageController extends Controller
+class PageController extends BaseController
 {
     /**
      * @Route("/", name="homepage")
      */
     public function indexAction()
     {
+
+
         return $this->render('pages/index.html.twig', []);
     }
 
@@ -28,7 +30,7 @@ class PageController extends Controller
      */
     public function missionAction()
     {
-        return $this->render('pages/about.html.twig', []);
+        return $this->render('pages/missions.html.twig', []);
     }
 
     /**

@@ -1,15 +1,11 @@
 <footer>
     <div class="bg">
         <div class="w64">
-            <a href="#"><img src="{{ asset('img/img-content/footer/liban.png') }}"></a>
-            <a href="#"><img src="{{ asset('img/img-content/footer/www.png') }}"></a>
-            <a href="#"><img src="{{ asset('img/img-content/footer/bistro.png') }}"></a>
-            <a href="#"><img src="{{ asset('img/img-content/footer/ofpra.png') }}"></a>
-            <a href="#"><img src="{{ asset('img/img-content/footer/calam.png') }}"></a>
-            <a href="#"><img src="{{ asset('img/img-content/footer/kitabna.png') }}"></a>
-            <a href="#"><img src="{{ asset('img/img-content/footer/codssy.png') }}"></a>
-            <a href="#"><img src="{{ asset('img/img-content/footer/arrondi.png') }}"></a>
-            <a href="#"><img src="{{ asset('img/img-content/footer/rotary.png') }}"></a>
+            {% for partner in data %}
+                <a href="{{ partner.url }}">
+                    <img src="{{ asset("/uploads/images/partners/#{partner.image}") }}" alt="{{ partner.alt }}">
+                </a>
+            {% endfor %}
         </div>
     </div>
 
