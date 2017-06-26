@@ -1,7 +1,5 @@
 .idea
 app/DoctrineMigrations
-web/img/**/*
-web/uploads/**/*
 
 /.web-server-pid
 /app/config/parameters.yml
