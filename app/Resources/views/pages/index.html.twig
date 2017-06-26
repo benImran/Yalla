@@ -2,58 +2,75 @@
 
 {% block body %}
     <div class="main">
-      <header class="side-menu">
-        <nav>
-          <ul class="intern">
-            <li><a href="{{ path('about') }}">Nous connaître</a></li>
-            <li><a href="">Notre mission</a></li>
+
+      <header>
+        <div class="burger-icon">
+          <div class="burger-stroke"></div>
+          <div class="burger-stroke"></div>
+          <div class="burger-stroke"></div>
+        </div>
+
+        <nav class="sidenav">
+          <ul class="inlinks">
+            <li><a href="">Nous connaître</a></li>
+            <li><a href="missions.html">Notre mission</a></li>
             <li><a href="">Nos projets</a></li>
             <li><a href="">Nous soutenir</a></li>
             <li><a href="">Nos partenaires</a></li>
             <li><a href="">Contact</a></li>
           </ul>
 
-          <ul class="social-networks">
-            <li><a href=""><i class="facebook"></i></a></li> <!-- facebook -->
-            <li><a href=""><i class="twitter"></i></a></li> <!-- twitter -->
-            <li><a href=""><i class="youtube"></i></a></li> <!-- youtube -->
-            <li><a href=""><i class="instagram"></i></a></li> <!-- instagram -->
-          </ul>
-          <span class="follow">Suivez-nous</span>
+          <div class="outlinks">
+            <ul class="social-networks">
+              <li><a href="" target="_blank"><i class="facebook"></i></a></li>
+              <li><a href="" target="_blank"><i class="twitter"></i></a></li>
+              <li><a href="" target="_blank"><i class="youtube"></i></a></li>
+              <li><a href="" target="_blank"><i class="instagram"></i></a></li>
+            </ul>
+            <span>Suivez-nous</span>
+          </div>
         </nav>
       </header>
 
       <section class="welcome">
-        <div class="background"></div>
+        <div class="bckd"></div>
         <h2>Faites l'école, pas la guerre !</h2>
 
         <article class="about">
           <div class="photos">
-            <div class="photo-container">
-              <div class="photo"></div>
-            </div>
-            <div class="photo-container">
-              <div class="photo"></div>
-            </div>
+              <div class="photo-content">
+                <div class="photo"></div>
+              </div>
+              <div class="photo-content">
+                <div class="photo"></div>
+              </div>
           </div>
+
           <div class="text">
-            <h3>L'aide humanitaire de proximité</h3>
-            <p><span class="drop-cap">P</span>our les Enfants vous convie le samedi 29 octobre à un fest-noz de levée de fonds dont les entiers bénéfices reviendront à son école d’Aley, située au Liban, à quelques kilomètres.</p>
+            <h3>Yalla pour les enfants</h3>
+            <p>
+              <span class="drop-cap">P</span>our les Enfants vous convie le samedi 29 octobre à un fest-noz de levée de fonds dont les entiers bénéfices reviendront à son école d’Aley, située au Liban, à quelques kilomètres.
+            </p>
+            <div class="do-more">
+              <i class="watch"></i>
+              <span>Regarder</span>
+            </div>
           </div>
-          <div class="do-more"><i class="watch"></i> <span>Regarder</span></div>
         </article>
       </section>
 
       <section class="cause">
         <article class="cause">
-          <div class="number-photo">
+          <div class="photos">
             <div class="photo"></div>
-            <div class="number"></div>
           </div>
+
           <div class="text">
             <h4>La cause</h4>
-            <p><span class="drop-cap">A</span>vec les Enfants vous convie le samedi 29 octobre à un fest-noz de levée de fonds dont les entiers bénéfices reviendront à son école d’Aley, située au Liban, à quelques kilomètres.</p>
-            <a href="" class="see-more">En savoir plus</a>
+            <p>
+              <span class="drop-cap">P</span>our les Enfants vous convie le samedi 29 octobre à un fest-noz de levée de fonds dont les entiers bénéfices reviendront à son école d’Aley, située au Liban, à quelques kilomètres.
+            </p>
+            <a href="">En savoir plus ></a>
           </div>
         </article>
       </section>
@@ -63,38 +80,52 @@
           <div class="text">
             <h4>Nos actions</h4>
             <h3>L'aide humanitaire de proximité</h3>
-            <p><span class="drop-cap">A</span>vec les Enfants vous convie le samedi 29 octobre à un fest-noz de levée de fonds dont les entiers bénéfices reviendront à son école d’Aley, située au Liban, à quelques kilomètres.</p>
+            <p>
+              <span class="drop-cap">P</span>our les Enfants vous convie le samedi 29 octobre à un fest-noz de levée de fonds dont les entiers bénéfices reviendront à son école d’Aley, située au Liban, à quelques kilomètres.
+            </p>
+            <div class="do-more">
+              <span>Ecouter</span>
+              <i class="listen"></i>
+            </div>
           </div>
+
           <div class="photos">
-            <div class="photo-container">
+            <div class="photo-content">
               <div class="photo"></div>
             </div>
           </div>
-          <div class="do-more"><span>Ecouter</span> <i class="listen"></i></div>
         </article>
       </section>
 
-      <div class="section-container">
-        <section class="donate">
-          <div>
-            <h3>L'aide humanitaire</h3>
-            <p>Convie le samedi 29 octobre à un fest-noz de levée de fonds dont les entiers bénéfices reviendront à son école d’Aley, située au Liban.</p>
-            <a href="">Faire un don</a>
-          </div>
-        </section>
-      </div>
+      <section class="donate">
+        <div class="text">
+          <h3>L'aide humanitaire</h3>
+          <p>
+            Convie le samedi 29 octobre à un fest-noz de levée de fonds dont les entiers bénéfices reviendront à son école d’Aley, située au Liban.
+          </p>
+          <a href="" target="_blank">Faire un don</a>
+        </div>
+      </section>
 
       <section class="last-news">
         <article class="last-news">
           <div class="photos">
-              <div class="photo"></div>
-              <h3>Dernier article</h3>
+            <div class="photo"></div>
+            <h3>L'aide humanitaire de proximité</h3>
           </div>
+
           <div class="text">
-            <p><span class="drop-cap">R</span>our les Enfants vous. If you are looking for a new way to promote your business that won’t cost you more money, maybe printing is one of the options you won’t resist. Printing is a widely use process in making printed materials that are used for advertising. Brochure, catalogs, flyers, banners, posters, and booklets are some of several examples of printed materials...</p>
+            <div class="do-more">
+              <i class="read"></i>
+              <span>Lire la suite</span>
+            </div>
+            <p>
+              <span class="drop-cap">P</span>our les Enfants vous convie le samedi 29 octobre à un fest-noz de levée de fonds dont les entiers bénéfices reviendront à son école d’Aley, située au Liban, à quelques kilomètres.
+            </p>
+            <p>
+              Nowadays, making printed materials have become fast, easy and simple. If you want your promotional material to be an eye-catching object, you should make it colored. By way of using inkjet printer this is not hard to make. 
+            </p>
           </div>
-          <div class="do-more"><i class="read"></i> <span>Lire la suite</span></div>
         </article>
       </section>
-    </div>
 {% endblock %}
