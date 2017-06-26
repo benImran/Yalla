@@ -1,0 +1,19 @@
+easy_admin:
+    entities:
+        Partner:
+            class: AppBundle\Entity\Partner
+            list:
+                fields:
+                    - url
+                    - alt
+                    - { property: 'image', type: 'image', base_path: '%app.path.partner_images%' }
+            show:
+                fields:
+                    - url
+                    - alt
+                    - { property: 'image', type: 'image', base_path: '%app.path.partner_images%' }
+            form:
+                fields:
+                    - url
+                    - alt
+                    - { property: 'imageFile', type: 'vich_image' }

@@ -1,0 +1,9 @@
+easy_admin:
+    entities:
+        User:
+            class: AppBundle\Entity\User
+            form:
+                fields:
+                    - username
+                    - plainPassword
+                    - { property: 'roles', type: 'collection' }

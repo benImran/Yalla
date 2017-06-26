@@ -1,0 +1,27 @@
+easy_admin:
+    entities:
+        Article:
+            class: AppBundle\Entity\Article
+            list:
+                fields:
+                    - title
+                    - { property: 'image', type: 'image', base_path: '%app.path.article_images%' }
+                    - synopsis
+                    - category
+                    - tags
+            show:
+                fields:
+                    - title
+                    - { property: 'image', type: 'image', base_path: '%app.path.article_images%' }
+                    - synopsis
+                    - body
+                    - category
+                    - tags
+            form:
+                fields:
+                    - title
+                    - { property: 'imageFile', type: 'vich_image' }
+                    - synopsis
+                    - { property: 'body', type: 'ckeditor' }
+                    - category
+                    - tags

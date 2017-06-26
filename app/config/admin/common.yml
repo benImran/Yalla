@@ -1,0 +1,4 @@
+easy_admin:
+    site_name: "Yalla"
+    design:
+        color_scheme: 'light'

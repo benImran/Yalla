@@ -2,6 +2,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
+    - { resource: admin/ }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -74,64 +75,6 @@ swiftmailer:
     password: '%mailer_password%'
     spool: { type: memory }
 
-easy_admin:
-    site_name: "Yalla"
-    design:
-        color_scheme: 'light'
-    entities:
-        Partner:
-            class: AppBundle\Entity\Partner
-            list:
-                fields:
-                    - url
-                    - alt
-                    - { property: 'image', type: 'image', base_path: '%app.path.partner_images%' }
-            show:
-                fields:
-                    - url
-                    - alt
-                    - { property: 'image', type: 'image', base_path: '%app.path.partner_images%' }
-            form:
-                fields:
-                    - url
-                    - alt
-                    - { property: 'imageFile', type: 'vich_image' }
-        User:
-            class: AppBundle\Entity\User
-            form:
-                fields:
-                    - username
-                    - plainPassword
-                    - { property: 'roles', type: 'collection' }
-        Article:
-            class: AppBundle\Entity\Article
-            list:
-                fields:
-                    - title
-                    - { property: 'image', type: 'image', base_path: '%app.path.article_images%' }
-                    - synopsis
-                    - category
-                    - tags
-            show:
-                fields:
-                    - title
-                    - { property: 'image', type: 'image', base_path: '%app.path.article_images%' }
-                    - synopsis
-                    - body
-                    - category
-                    - tags
-            form:
-                fields:
-                    - title
-                    - { property: 'imageFile', type: 'vich_image' }
-                    - synopsis
-                    - { property: 'body', type: 'ckeditor' }
-                    - category
-                    - tags
-
-        Category:
-            class: AppBundle\Entity\Category
-
 vich_uploader:
     db_driver: orm
     mappings:
@@ -173,3 +116,36 @@ stof_doctrine_extensions:
     orm:
         default:
             sluggable: true
+
+sonata_seo:
+    encoding:         UTF-8
+    page:
+        title:            Sonata Project
+        default:          sonata.seo.page.default
+        metas:
+            name:
+                keywords:             foo bar
+                description:          The description
+                robots:               index, follow
+
+            property:
+                # Facebook application settings
+                #'fb:app_id':          XXXXXX
+                #'fb:admins':          admin1, admin2
+
+                # Open Graph information
+                # see http://developers.facebook.com/docs/opengraphprotocol/#types or http://ogp.me/
+                'og:site_name':       Sonata Project Sandbox
+                'og:description':     A demo of the some rich bundles for your Symfony2 projects
+
+            http-equiv:
+                'Content-Type':         text/html; charset=utf-8
+                #'X-Ua-Compatible':      IE=EmulateIE7
+
+            charset:
+                UTF-8:    ''
+
+        head:
+            'xmlns':              http://www.w3.org/1999/xhtml
+            'xmlns:og':           http://opengraphprotocol.org/schema/
+            #'xmlns:fb':           "http://www.facebook.com/2008/fbml"
