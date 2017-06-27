@@ -10,7 +10,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 class ArticleController extends BaseController
 {
     /**
-     * @Route("/blog", name="news")
+     * @Route("/blog", name="blog")
      */
     public function listAction()
     {
