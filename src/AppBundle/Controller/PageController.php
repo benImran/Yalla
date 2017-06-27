@@ -76,6 +76,8 @@ class PageController extends BaseController
 
     public function setSonataSeo($info)
     {
+        if (!$info) return null;
+
         $this->seoPage
             ->setTitle($info->getTitle())
             ->addMeta('name', 'description', $info->getDescription())
