@@ -11,6 +11,16 @@ class PageController extends BaseController
      */
     public function indexAction()
     {
+        $info = $this->getPageInfo("homepage");
+
+        $seoPage = $this->container->get('sonata.seo.page');
+
+        $seoPage
+            ->setTitle($info->getTitle())
+            ->addMeta('name', 'description', $info->getDescription())
+            ->addMeta('property', 'og:title', $info->getTitle())
+            ->addMeta('property', 'og:description', $info->getDescription());
+
         return $this->render('pages/index.html.twig', []);
     }
 
@@ -19,6 +29,16 @@ class PageController extends BaseController
      */
     public function aboutAction()
     {
+        $info = $this->getPageInfo("about");
+
+        $seoPage = $this->container->get('sonata.seo.page');
+
+        $seoPage
+            ->setTitle($info->getTitle())
+            ->addMeta('name', 'description', $info->getDescription())
+            ->addMeta('property', 'og:title', $info->getTitle())
+            ->addMeta('property', 'og:description', $info->getDescription());
+
         return $this->render('pages/about.html.twig', []);
     }
 
@@ -35,7 +55,7 @@ class PageController extends BaseController
      */
     public function projectAction()
     {
-        return $this->render('pages/about.html.twig', []);
+        return $this->render('pages/projects.html.twig', []);
     }
 
     /**
@@ -54,11 +74,9 @@ class PageController extends BaseController
         return $this->render('pages/about.html.twig', []);
     }
 
-    /**
-     * @Route("/partenaires", name="partners")
-     */
-    public function partnersAction()
+    public function getPageInfo($page)
     {
-        return $this->render('pages/about.html.twig', []);
+        return self::$em->getRepository("AppBundle:Page")
+            ->findOneBy(["page" => $page]);
     }
 }

@@ -34,11 +34,11 @@
 
       <section class="paper">
         <article class="paper">
-          <span class="date">26 juin 2017</span>
+          <span class="date">{{ data.createdAt|localizeddate('full', 'none', app.request.locale)  }}</span>
 
-          <h3>Fest-noz solidaire le 29 octobre à Poullaouen</h3>
+          <h3>{{ data.title }}</h3>
 
-          <img src="dist/img/img-content/news02.png">
+          <img src="{{ asset("/uploads/images/articles/#{data.image}") }}">
 
           <div class="text">
             <div class="side-infos">
@@ -46,7 +46,7 @@
                 <li class="views">114 vues</li>
                 <li class="share">Partager</li>
               </ul>
-              <blockquote>Cette fête traditionnelle bretonne</blockquote> 
+              <blockquote>Cette fête traditionnelle bretonne</blockquote>
             </div>
 
             <div class="paper-body">
