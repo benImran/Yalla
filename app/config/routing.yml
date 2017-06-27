@@ -1,5 +1,5 @@
 app:
-    resource: '@AppBundle/Controller/'
+    resource: "@AppBundle/Controller/"
     type: annotation
 
 easy_admin_bundle:
@@ -7,3 +7,10 @@ easy_admin_bundle:
     type:     annotation
     prefix:   /admin
 
+_errors:
+    resource: "@TwigBundle/Resources/config/routing/errors.xml"
+    prefix:   /_error
+
+remove_trailing_slash:
+    resource: "@AppBundle/Controller/RedirectingController.php"
+    type: annotation
