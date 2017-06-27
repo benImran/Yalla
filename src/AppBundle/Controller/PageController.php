@@ -2,17 +2,26 @@
 
 namespace AppBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sonata\SeoBundle\Seo\SeoPage;
 
 class PageController extends BaseController
 {
+    private $seoPage;
+
+    public function __construct(SeoPage $seoPage, EntityManagerInterface $em)
+    {
+        parent::__construct($em);
+        $this->seoPage = $seoPage;
+    }
+
     /**
      * @Route("/", name="homepage")
      */
     public function indexAction()
     {
-
+        $this->setSonataSeo($this->getPageInfo("homepage"));
 
         return $this->render('pages/index.html.twig', []);
     }
@@ -22,6 +31,8 @@ class PageController extends BaseController
      */
     public function aboutAction()
     {
+        $this->setSonataSeo($this->getPageInfo("about"));
+
         return $this->render('pages/about.html.twig', []);
     }
 
@@ -38,7 +49,7 @@ class PageController extends BaseController
      */
     public function projectAction()
     {
-        return $this->render('pages/about.html.twig', []);
+        return $this->render('pages/projects.html.twig', []);
     }
 
     /**
@@ -57,11 +68,18 @@ class PageController extends BaseController
         return $this->render('pages/about.html.twig', []);
     }
 
-    /**
-     * @Route("/partenaires", name="partners")
-     */
-    public function partnersAction()
+    public function getPageInfo($page)
     {
-        return $this->render('pages/about.html.twig', []);
+        return self::$em->getRepository("AppBundle:Page")
+            ->findOneBy(["page" => $page]);
+    }
+
+    public function setSonataSeo($info)
+    {
+        $this->seoPage
+            ->setTitle($info->getTitle())
+            ->addMeta('name', 'description', $info->getDescription())
+            ->addMeta('property', 'og:title', $info->getTitle())
+            ->addMeta('property', 'og:description', $info->getDescription());
     }
 }

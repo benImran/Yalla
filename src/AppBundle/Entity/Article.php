@@ -46,12 +46,6 @@ class Article
     private $imageFile;
 
     /**
-     * @ORM\Column(type="datetime")
-     * @var \DateTime
-     */
-    private $updatedAt;
-
-    /**
      * @ORM\Column(type="string")
      */
     private $synopsis;
@@ -79,6 +73,18 @@ class Article
      * @ORM\Column(type="string", unique=true, length=128)
      */
     private $slug;
+
+    /**
+     * @Gedmo\Timestampable(on="create")
+     * @ORM\Column(type="datetime")
+     */
+    private $createdAt;
+
+    /**
+     * @Gedmo\Timestampable(on="update")
+     * @ORM\Column(type="datetime")
+     */
+    private $updatedAt;
 
     public function __toString()
     {
@@ -126,16 +132,6 @@ class Article
             // if 'updatedAt' is not defined in your entity, use another property
             $this->updatedAt = new \DateTime('now');
         }
-    }
-
-    public function getUpdatedAt()
-    {
-        return $this->updatedAt;
-    }
-
-    public function setUpdatedAt($updatedAt)
-    {
-        $this->updatedAt = $updatedAt;
     }
 
     public function getSynopsis()
@@ -201,5 +197,15 @@ class Article
     public function isVisible()
     {
         return $this->getVisible();
+    }
+
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
     }
 }

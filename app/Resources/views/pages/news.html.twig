@@ -32,38 +32,38 @@
         </nav>
       </header>
 
-        {#<section class="last-news2">#}
-            {#<h2>Nos articles</h2>#}
+        <section class="last-news2">
+            <h2>Nos articles</h2>
 
-            {#<article class="news">#}
-                {#<div class="photos">#}
-                    {#<img src="dist/img/img-content/news01.png" class="photo">#}
-                {#</div>#}
+            <article class="news">
+                <div class="photos">
+                    <img src="dist/img/img-content/news01.png" class="photo">
+                </div>
 
-                {#<div class="text">#}
-                    {#<span class="date">27 Oct 2017</span>#}
-                    {#<h3>Fest-noz solidaire le 29 octobre à Poullaouen</h3>#}
-                    {#<p>#}
-                        {#Yalla! Pour les Enfants vous convie le samedi 29 octobre à un fest-noz de levée de fonds dont les                         entiers bénéfices reviendront à son école d’Aley, située au Liban, à quelques kilomètres#}
-                    {#</p>#}
-                    {#<a href="">En savoir plus ></a>#}
-                {#</div>#}
-            {#</article>#}
-        {#</section>#}
-      
+                <div class="text">
+                    <span class="date">27 Oct 2017</span>
+                    <h3>Fest-noz solidaire le 29 octobre à Poullaouen</h3>
+                    <p>
+                        Yalla! Pour les Enfants vous convie le samedi 29 octobre à un fest-noz de levée de fonds dont les                         entiers bénéfices reviendront à son école d’Aley, située au Liban, à quelques kilomètres
+                    </p>
+                    <a href="">En savoir plus ></a>
+                </div>
+            </article>
+        </section>
+
       <section class="news">
         <h4>Tous nos articles</h4>
-  
+
         <div class="news-container">
-            {% for articles in data %}
+            {% for article in data %}
           <a href="">
             <article class="news">
-                <span class="date">27 Oct 2017</span>
-                <h3>{{ articles.title }}</h3>
+                <span class="date">{{ article.createdAt|localizeddate('full', 'none', app.request.locale)  }}</span>
+                <h3>{{ article.title }}</h3>
 
-                <img src="{{ asset("/uploads/images/articles/#{articles.image}") }}" alt="">
+                <img src="{{ asset("/uploads/images/articles/#{article.image}") }}" alt="">
                 <p>
-                  {{ articles.body|raw }}
+                  {{ article.body|raw }}
                 </p>
             </article>
           </a>
