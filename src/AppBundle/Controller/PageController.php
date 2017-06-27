@@ -2,7 +2,6 @@
 
 namespace AppBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 class PageController extends BaseController
@@ -12,8 +11,6 @@ class PageController extends BaseController
      */
     public function indexAction()
     {
-
-
         return $this->render('pages/index.html.twig', []);
     }
 

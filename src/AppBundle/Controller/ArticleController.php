@@ -14,7 +14,7 @@ class ArticleController extends Controller
     public function articleAction(EntityManagerInterface $em)
     {
         $data = $em->getRepository('AppBundle:Article')
-            ->findAll();
+            ->findBy(["visible" => true]);
 
         return $this->render('pages/news.html.twig', ["data" => $data]);
     }

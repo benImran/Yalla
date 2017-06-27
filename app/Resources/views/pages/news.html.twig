@@ -58,7 +58,7 @@
             {% for article in data %}
           <a href="">
             <article class="news">
-                <span class="date">27 Oct 2017</span>
+                <span class="date">{{ article.createdAt|localizeddate('full', 'none', app.request.locale)  }}</span>
                 <h3>{{ article.title }}</h3>
 
                 <img src="{{ asset("/uploads/images/articles/#{article.image}") }}" alt="">
