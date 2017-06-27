@@ -1,5 +1,5 @@
 AppBundle\Entity\User:
     user_{1..1}:
-        username: Ben
+        username: ben
         plainPassword: test
         roles: ['ROLE_ADMIN']

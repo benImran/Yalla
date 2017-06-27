@@ -32,116 +32,42 @@
         </nav>
       </header>
 
-      <section class="last-news2">
-        <h2>Nos articles</h2>
-        
-        <article class="news">
-          <div class="photos">
-            <img src="dist/img/img-content/news01.png" class="photo">
-          </div>
+        <section class="last-news2">
+            <h2>Nos articles</h2>
 
-          <div class="text">
-            <span class="date">27 Oct 2017</span>
-            <h3>Fest-noz solidaire le 29 octobre à Poullaouen</h3>
-            <p>
-              Yalla! Pour les Enfants vous convie le samedi 29 octobre à un fest-noz de levée de fonds dont les entiers bénéfices reviendront à son école d’Aley, située au Liban, à quelques kilomètres
-            </p>
-            <a href="">En savoir plus ></a>
-          </div>
-        </article>       
-      </section>
+            <article class="news">
+                <div class="photos">
+                    <img src="dist/img/img-content/news01.png" class="photo">
+                </div>
+
+                <div class="text">
+                    <span class="date">27 Oct 2017</span>
+                    <h3>Fest-noz solidaire le 29 octobre à Poullaouen</h3>
+                    <p>
+                        Yalla! Pour les Enfants vous convie le samedi 29 octobre à un fest-noz de levée de fonds dont les                         entiers bénéfices reviendront à son école d’Aley, située au Liban, à quelques kilomètres
+                    </p>
+                    <a href="">En savoir plus ></a>
+                </div>
+            </article>
+        </section>
       
       <section class="news">
         <h4>Tous nos articles</h4>
   
         <div class="news-container">
+            {% for articles in data %}
           <a href="">
             <article class="news">
                 <span class="date">27 Oct 2017</span>
-                <h3>Fest-noz solidaire le 29 octobre à Poullaouen</h3>
-                <img src="dist/img/img-content/news01.png" class="photo">
-                <p>
-                  Yalla! Pour les Enfants vous convie le samedi 29 octobre à un fest-noz de levée de fonds dont les entiers bénéfices reviendront à son école d’Aley, située au Liban, à quelques kilomètres
-                </p>
-            </article>
-          </a>
+                <h3>{{ articles.title }}</h3>
 
-          <a href="">
-            <article class="news">
-                <span class="date">27 Oct 2017</span>
-                <h3>Fest-noz solidaire le 29 octobre à Poullaouen</h3>
-                <img src="dist/img/img-content/news01.png" class="photo">
+                <img src="{{ asset("/uploads/images/articles/#{articles.image}") }}" alt="">
                 <p>
-                  Yalla! Pour les Enfants vous convie le samedi 29 octobre à un fest-noz de levée de fonds dont les entiers bénéfices reviendront à son école d’Aley, située au Liban, à quelques kilomètres
+                  {{ articles.body|raw }}
                 </p>
             </article>
           </a>
-
-          <a href="">
-            <article class="news">
-                <span class="date">27 Oct 2017</span>
-                <h3>Fest-noz solidaire le 29 octobre à Poullaouen</h3>
-                <img src="dist/img/img-content/news01.png" class="photo">
-                <p>
-                  Yalla! Pour les Enfants vous convie le samedi 29 octobre à un fest-noz de levée de fonds dont les entiers bénéfices reviendront à son école d’Aley, située au Liban, à quelques kilomètres
-                </p>
-            </article>
-          </a>
-
-          <a href="">
-            <article class="news">
-                <span class="date">27 Oct 2017</span>
-                <h3>Fest-noz solidaire le 29 octobre à Poullaouen</h3>
-                <img src="dist/img/img-content/news01.png" class="photo">
-                <p>
-                  Yalla! Pour les Enfants vous convie le samedi 29 octobre à un fest-noz de levée de fonds dont les entiers bénéfices reviendront à son école d’Aley, située au Liban, à quelques kilomètres
-                </p>
-            </article>
-          </a>
-
-          <a href="">
-            <article class="news">
-                <span class="date">27 Oct 2017</span>
-                <h3>Fest-noz solidaire le 29 octobre à Poullaouen</h3>
-                <img src="dist/img/img-content/news01.png" class="photo">
-                <p>
-                  Yalla! Pour les Enfants vous convie le samedi 29 octobre à un fest-noz de levée de fonds dont les entiers bénéfices reviendront à son école d’Aley, située au Liban, à quelques kilomètres
-                </p>
-            </article>
-          </a>
-
-          <a href="">
-            <article class="news">
-                <span class="date">27 Oct 2017</span>
-                <h3>Fest-noz solidaire le 29 octobre à Poullaouen</h3>
-                <img src="dist/img/img-content/news01.png" class="photo">
-                <p>
-                  Yalla! Pour les Enfants vous convie le samedi 29 octobre à un fest-noz de levée de fonds dont les entiers bénéfices reviendront à son école d’Aley, située au Liban, à quelques kilomètres
-                </p>
-            </article>
-          </a>
-
-          <a href="">
-            <article class="news">
-                <span class="date">27 Oct 2017</span>
-                <h3>Fest-noz solidaire le 29 octobre à Poullaouen</h3>
-                <img src="dist/img/img-content/news01.png" class="photo">
-                <p>
-                  Yalla! Pour les Enfants vous convie le samedi 29 octobre à un fest-noz de levée de fonds dont les entiers bénéfices reviendront à son école d’Aley, située au Liban, à quelques kilomètres
-                </p>
-            </article>
-          </a>
-
-          <a href="">
-            <article class="news">
-                <span class="date">27 Oct 2017</span>
-                <h3>Fest-noz solidaire le 29 octobre à Poullaouen</h3>
-                <img src="dist/img/img-content/news01.png" class="photo">
-                <p>
-                  Yalla! Pour les Enfants vous convie le samedi 29 octobre à un fest-noz de levée de fonds dont les entiers bénéfices reviendront à son école d’Aley, située au Liban, à quelques kilomètres
-                </p>
-            </article>
-          </a>
+            {% endfor %}
 
           <div class="pages">
             <span class="previous">Précédent</span>
