@@ -2,8 +2,11 @@ easy_admin:
     entities:
         User:
             class: AppBundle\Entity\User
+            list:
+                actions: []
             form:
                 fields:
                     - username
                     - plainPassword
                     - { property: 'roles', type: 'collection' }
+

@@ -5,26 +5,31 @@ easy_admin:
             list:
                 fields:
                     - visible
-                    - title
                     - { property: 'image', type: 'image', base_path: '%app.path.article_images%' }
+                    - title
                     - synopsis
                     - category
                     - tags
+                    - lang
             show:
                 fields:
                     - visible
-                    - title
                     - { property: 'image', type: 'image', base_path: '%app.path.article_images%' }
+                    - title
                     - synopsis
                     - body
                     - category
                     - tags
+                    - lang
             form:
                 fields:
                     - visible
-                    - title
                     - { property: 'imageFile', type: 'vich_image' }
+                    - title
                     - synopsis
+                    - { type: 'divider' }
                     - { property: 'body', type: 'ckeditor' }
+                    - { type: 'divider' }
                     - category
                     - tags
+                    - { property: 'lang', type: 'choice', type_options: {choices: { 'Fr':'fr', 'En':'en' }} }
