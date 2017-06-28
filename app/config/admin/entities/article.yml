@@ -5,16 +5,16 @@ easy_admin:
             list:
                 fields:
                     - visible
-                    - title
                     - { property: 'image', type: 'image', base_path: '%app.path.article_images%' }
+                    - title
                     - synopsis
                     - category
                     - tags
             show:
                 fields:
                     - visible
-                    - title
                     - { property: 'image', type: 'image', base_path: '%app.path.article_images%' }
+                    - title
                     - synopsis
                     - body
                     - category
@@ -22,9 +22,11 @@ easy_admin:
             form:
                 fields:
                     - visible
-                    - title
                     - { property: 'imageFile', type: 'vich_image' }
+                    - title
                     - synopsis
+                    - { type: 'divider' }
                     - { property: 'body', type: 'ckeditor' }
+                    - { type: 'divider' }
                     - category
                     - tags
