@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sonata\SeoBundle\Seo\SeoPage;
+use Symfony\Component\HttpFoundation\Request;
 
 class PageController extends BaseController
 {
