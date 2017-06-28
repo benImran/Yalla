@@ -1,0 +1,7 @@
+easy_admin:
+    entities:
+        Tag:
+            class: AppBundle\Entity\Tag
+            form:
+                fields:
+                    - name

@@ -4,6 +4,7 @@
 namespace AppBundle\Entity;
 
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
@@ -64,9 +65,11 @@ class Article
     private $category;
 
     /**
-     * @ORM\Column(type="simple_array")
+     * @ORM\ManyToMany(
+     *     targetEntity="AppBundle\Entity\Tag",
+     *     inversedBy="articles")
      */
-    private $tags = [];
+    private $tags;
 
     /**
      * @Gedmo\Slug(fields={"title"}, updatable=false)
@@ -85,6 +88,11 @@ class Article
      * @ORM\Column(type="datetime")
      */
     private $updatedAt;
+
+    public function __construct()
+    {
+        $this->tags = new ArrayCollection();
+    }
 
     public function __toString()
     {
@@ -164,16 +172,6 @@ class Article
         $this->category = $category;
     }
 
-    public function getTags()
-    {
-        return $this->tags;
-    }
-
-    public function setTags($tags)
-    {
-        $this->tags = $tags;
-    }
-
     public function getSlug()
     {
         return $this->slug;
@@ -182,6 +180,11 @@ class Article
     public function setSlug($slug)
     {
         $this->slug = $slug;
+    }
+
+    public function getTags()
+    {
+        return $this->tags;
     }
 
     public function getVisible()
