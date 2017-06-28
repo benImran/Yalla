@@ -4,7 +4,10 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Article;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Bundle\PaginatorBundle\KnpPaginatorBundle;
+use Knp\Component\Pager\Paginator;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class ArticleController extends BaseController
@@ -12,12 +15,24 @@ class ArticleController extends BaseController
     /**
      * @Route("/blog", name="blog")
      */
-    public function listAction()
+    public function listAction(Request $request)
     {
-        $data = self::$em->getRepository('AppBundle:Article')
-            ->findBy(["visible" => true]);
+        $em    = $this->get('doctrine.orm.entity_manager');
+        $dql   = "SELECT a FROM AppBundle:Article a";
+        $query = $em->createQuery($dql);
+        /** @var Paginator $paginator */
+        $paginator = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $query,
+            $request->query->getInt('page', 1),
+            8
+        );
 
-        return $this->render('pages/news.html.twig', ["data" => $data]);
+        return $this->render(
+            'pages/news.html.twig', [
+                "pagination" => $pagination,
+            ]
+        );
     }
 
     /**
@@ -32,7 +47,12 @@ class ArticleController extends BaseController
             throw new NotFoundHttpException("This article does not exist");
         }
 
-        return $this->render('pages/paper.html.twig', ["data" => $data]);
+        return $this->render(
+            'pages/paper.html.twig', ["data" => $data]
+        );
     }
+
+
+
 }
 

@@ -24,30 +24,26 @@
         <h4>Tous nos articles</h4>
 
         <div class="news-container">
-            {% for article in data %}
-          <a href="">
-            <article class="news">
-                <span class="date">{{ article.createdAt|localizeddate('full', 'none', app.request.locale)  }}</span>
-                <h3>{{ article.title }}</h3>
+            <div class="count">
+                {{ pagination.getTotalItemCount }} pages
+            </div>
+            {% for article in pagination %}
+                <a href="">
+                    <article class="news">
+                        <span class="date">{{ article.createdAt|localizeddate('full', 'none', app.request.locale) }}</span>
+                        <h3>{{ article.title }}</h3>
 
-                <img src="{{ asset("/uploads/images/articles/#{article.image}") }}" alt="">
-                <p>
-                  {{ article.synopsis|raw }}
-                </p>
-            </article>
-          </a>
+                        <img src="{{ asset("/uploads/images/articles/#{article.image}") }}" alt="">
+                        <p>
+                            {{ article.synopsis|raw }}
+                        </p>
+                    </article>
+                </a>
             {% endfor %}
+            <div class="navigation">
+                {{ knp_pagination_render(pagination) }}
+            </div>
 
-          <div class="pages">
-            <span class="previous">Précédent</span>
-            <ul class="pages">
-              <li>1</li>
-              <li>2</li>
-              <li>3</li>
-              <li>4</li>
-            </ul>
-            <span class="next">Suivant</span>
-          </div>
         </div>
       </section>
 
