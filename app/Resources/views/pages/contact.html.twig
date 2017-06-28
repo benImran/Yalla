@@ -1,0 +1,82 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <div class="main">
+        <header>
+        <div class="burger-icon">
+          <div class="burger-stroke"></div>
+          <div class="burger-stroke"></div>
+          <div class="burger-stroke"></div>
+        </div>
+
+        <nav class="sidenav">
+          <a href="index.html">
+            <h1>
+              <img src="dist/img/img-layout/mini-logo-yalla.svg" class="logo">
+            </h1>
+          </a>
+
+          <a href="" class="give"><span>Donner</span></a>
+
+          <ul class="inlinks">
+            <li><a href="about.html">Nous connaître</a></li>
+            <li><a href="missions.html">Notre mission</a></li>
+            <li><a href="projects.html">Nos projets</a></li>
+            <li><a href="">Nous soutenir</a></li>
+            <li><a href="news.html">Nos articles</a></li>
+            <li><a href="contact.html" class="current">Nous contacter</a></li>
+          </ul>
+
+          <ul class="lang">
+            <li class="active" id="fr">Fr</li>
+            <li id="en">En</li>
+          </ul>
+
+          <div class="outlinks">
+            <ul class="social-networks">
+              <li><a href="https://www.facebook.com/yalla.enfants.syriens/" target="_blank"><i class="facebook"></i></a></li>
+              <li><a href="https://twitter.com/4yalla" target="_blank"><i class="twitter"></i></a></li>
+              <li><a href="" target="_blank"><i class="youtube"></i></a></li>
+              <li><a href="" target="_blank"><i class="instagram"></i></a></li>
+            </ul>
+            <span>Suivez-nous</span>
+          </div>
+        </nav>
+      </header>
+
+        <div class="contact">
+        <h1>Contact</h1>
+            <div>
+            <p class="bold">Pour toute demande de renseignements sur notre association, n’hésitez pas à nous contacter à notre
+                nouvelle adresse: <span ><a href="mailto:yalla.enfants@gmail.com">yalla.enfants@gmail.com</a></span></p>
+            <p class="bold">Nous vous répondrons au plus vite !</p>
+            </div>
+
+            <div>
+             <h3>Adresse postale</h3>
+                <p>Yalla! Pour les Enfants</p>
+                <p>13, rue René Villerme – 75011 PARIS</p>
+            </div>
+            <div>
+            <h3>Mentions légales</h3>
+                <p>Association Yalla! Pour les Enfants </p>
+                <p>13, rue René Villerme – 75011 PARIS </p>
+                <p>Directrice de publication : Mary Lemeland-Mellionec </p>
+                <p>Téléphone : +33 (0)6.17.77.71.22 </p>
+            </div>
+            <div>
+            <h3>Hébergeur</h3>
+                <p> Hébergeur : OVH </p>
+                <p> 2 rue Kellermann – 59100 Roubaix – France </p>
+            </div>
+            <div>
+                <a class="send-mail">
+                    <p>Envoyer un mail</p>
+                </a>
+            </div>
+            
+            <img class="bg" src="dist/img/img-content/circle-background.png">
+        </div>
+
+    </div>
+{% endblock %}
