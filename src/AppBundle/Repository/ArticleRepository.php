@@ -12,4 +12,7 @@ use Doctrine\ORM\EntityRepository;
  */
 class ArticleRepository extends EntityRepository
 {
+    public function getArticlesDesc() {
+
+    }
 }

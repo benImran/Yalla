@@ -3,21 +3,17 @@
 {% block body %}
         <section class="last-news2">
             <h2>Nos articles</h2>
+                <a href="">
+                    <article class="news">
+                        <span class="date">{{ news.createdAt|localizeddate('full', 'none', app.request.locale) }}</span>
+                        <h3>{{ news.title }}</h3>
 
-            <article class="news">
-                <div class="photos">
-                    <img src="dist/img/img-content/news01.png" class="photo">
-                </div>
-
-                <div class="text">
-                    <span class="date">27 Oct 2017</span>
-                    <h3>Fest-noz solidaire le 29 octobre à Poullaouen</h3>
-                    <p>
-                        Yalla! Pour les Enfants vous convie le samedi 29 octobre à un fest-noz de levée de fonds dont les                         entiers bénéfices reviendront à son école d’Aley, située au Liban, à quelques kilomètres
-                    </p>
-                    <a href="">En savoir plus ></a>
-                </div>
-            </article>
+                        <img src="{{ asset("/uploads/images/articles/#{news.image}") }}" alt="">
+                        <p>
+                            {{ news.synopsis|raw }}
+                        </p>
+                    </article>
+                </a>
         </section>
 
       <section class="news">
