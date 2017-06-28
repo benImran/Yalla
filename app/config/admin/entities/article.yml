@@ -10,6 +10,7 @@ easy_admin:
                     - synopsis
                     - category
                     - tags
+                    - lang
             show:
                 fields:
                     - visible
@@ -19,6 +20,7 @@ easy_admin:
                     - body
                     - category
                     - tags
+                    - lang
             form:
                 fields:
                     - visible
@@ -30,3 +32,4 @@ easy_admin:
                     - { type: 'divider' }
                     - category
                     - tags
+                    - { property: 'lang', type: 'choice', type_options: {choices: { 'Fr':'fr', 'En':'en' }} }

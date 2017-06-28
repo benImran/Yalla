@@ -89,6 +89,11 @@ class Article
      */
     private $updatedAt;
 
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $lang;
+
     public function __construct()
     {
         $this->tags = new ArrayCollection();
@@ -210,5 +215,15 @@ class Article
     public function getUpdatedAt()
     {
         return $this->updatedAt;
+    }
+
+    public function getLang()
+    {
+        return $this->lang;
+    }
+
+    public function setLang($lang)
+    {
+        $this->lang = $lang;
     }
 }
