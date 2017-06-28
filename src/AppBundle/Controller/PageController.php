@@ -66,7 +66,7 @@ class PageController extends BaseController
      */
     public function contactAction()
     {
-        return $this->render('pages/about.html.twig', []);
+        return $this->render('pages/contact.html.twig', []);
     }
 
     public function getPageInfo($page)

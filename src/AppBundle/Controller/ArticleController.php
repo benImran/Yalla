@@ -22,15 +22,21 @@ class ArticleController extends BaseController
         $query = $em->createQuery($dql);
         /** @var Paginator $paginator */
         $paginator = $this->get('knp_paginator');
+
+        $news = $em->getRepository('AppBundle:Article')
+            ->findAll();
+
         $pagination = $paginator->paginate(
             $query,
             $request->query->getInt('page', 1),
             8
+
         );
 
         return $this->render(
             'pages/news.html.twig', [
                 "pagination" => $pagination,
+                "news" => $news[0],
             ]
         );
     }
