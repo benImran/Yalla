@@ -2,3 +2,6 @@ easy_admin:
     entities:
         Category:
             class: AppBundle\Entity\Category
+            form:
+                fields:
+                    - name

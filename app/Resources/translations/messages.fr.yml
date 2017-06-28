@@ -3,6 +3,24 @@ Username: Utilisateur
 Password: Mot de Passe
 User: Utilisateur
 Category: Catégorie
+Page: Page
+Title: Titre
+Description: Description
+Name: Nom
+Article: Article
+ID: ID
+Articles: Articles
+Visible: Visible
+Image: Image
+Synopsis: Synopsis
+Tags: Tags
+Url: Lien
+Alt: Alt
+Plain password: Mot de Passe
+Roles: Roles
+Image file: Fichier Image
+Body: Body
+
 menu.about: Nous Connaître
 menu.mission: Mission
 menu.project: Projets
