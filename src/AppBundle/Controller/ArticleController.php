@@ -24,7 +24,7 @@ class ArticleController extends BaseController
         $paginator = $this->get('knp_paginator');
 
         $news = $em->getRepository('AppBundle:Article')
-            ->findAll();
+            ->findOneBy([], ['id' => 'DESC']);
 
         $pagination = $paginator->paginate(
             $query,
@@ -36,7 +36,7 @@ class ArticleController extends BaseController
         return $this->render(
             'pages/news.html.twig', [
                 "pagination" => $pagination,
-                "news" => $news[0],
+                "news" => $news,
             ]
         );
     }

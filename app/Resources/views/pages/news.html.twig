@@ -1,6 +1,7 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
+    <div class="news__wrapper">
         <section class="last-news2">
             <h2>Nos articles</h2>
                 <a href="">
@@ -8,7 +9,7 @@
                         <span class="date">{{ news.createdAt|localizeddate('full', 'none', app.request.locale) }}</span>
                         <h3>{{ news.title }}</h3>
 
-                        <img src="{{ asset("/uploads/images/articles/#{news.image}") }}" alt="">
+                        <img src="{{ asset("/uploads/images/articles/#{news.image}") }}" class="photo" alt="">
                         <p>
                             {{ news.synopsis|raw }}
                         </p>
@@ -29,7 +30,7 @@
                         <span class="date">{{ article.createdAt|localizeddate('full', 'none', app.request.locale) }}</span>
                         <h3>{{ article.title }}</h3>
 
-                        <img src="{{ asset("/uploads/images/articles/#{article.image}") }}" alt="">
+                        <img src="{{ asset("/uploads/images/articles/#{article.image}") }}" class="photo" alt="">
                         <p>
                             {{ article.synopsis|raw }}
                         </p>
@@ -42,6 +43,5 @@
 
         </div>
       </section>
-
     </div>
 {% endblock %}
