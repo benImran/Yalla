@@ -25,8 +25,6 @@ class ArticleController extends BaseController
         /** @var Paginator $paginator */
         $paginator = $this->get('knp_paginator');
 
-
-
         $news = self::$em->getRepository('AppBundle:Article')
             ->findOneBy(['lang' => $locale], ['id' => 'DESC']);
 
