@@ -16,9 +16,9 @@
       </div>
 
       <div class="text">
-        <h3>Yalla pour les enfants</h3>
+        <h3>L'aide humanitaire de proximité</h3>
         <p>
-          <span class="drop-cap">P</span>our les Enfants vous convie le samedi 29 octobre à un fest-noz de levée de fonds dont les entiers bénéfices reviendront à son école d’Aley, située au Liban, à quelques kilomètres.
+          <span class="drop-cap">D</span>évelopper la solidarité internationale en créant un pont entre les sociétés civiles en mesure d’aider et celles qui en ont besoin. Grâce à une structure rationalisée, au plus près des donateurs et des bénéficiaires, Yalla ! permet aux membres de la société civile solidaire de visualiser l’impact de leurs dons.
         </p>
         <div class="do-more">
           <i class="watch"></i>
@@ -34,10 +34,10 @@
         <div class="photo"></div>
       </div>
 
-      <div class="text rellax">
+      <div class="text">
         <h4>La cause</h4>
         <p>
-          <span class="drop-cap">P</span>our les Enfants vous convie le samedi 29 octobre à un fest-noz de levée de fonds dont les entiers bénéfices reviendront à son école d’Aley, située au Liban, à quelques kilomètres.
+          <span class="drop-cap">Y</span>alla! Pour les Enfants a été créée en juillet 2013 par des citoyens français connaisseurs de la Syrie et du Moyen-Orient, et soucieux du respect des droits l’Homme.
         </p>
         <a href="">En savoir plus ></a>
       </div>
@@ -48,9 +48,15 @@
     <article class="actions">
       <div class="text">
         <h4>Nos actions</h4>
-        <h3>L'aide humanitaire de proximité</h3>
+        <h3>Une aide humanitaire concrète</h3>
         <p>
-          <span class="drop-cap">P</span>our les Enfants vous convie le samedi 29 octobre à un fest-noz de levée de fonds dont les entiers bénéfices reviendront à son école d’Aley, située au Liban, à quelques kilomètres.
+          <span><span class="drop-cap">C</span>réation de centres d’éducation informelle</span> de qualité à destination d’enfants syriens réfugiés<br>
+          <br>
+          <span>Plaidoyer auprès des autorités</span> libanaises locales et gouvernementales pour l’intégration des
+          enfants syriens au sein du système   scolaire libanais,  après remise à niveau par Yalla !<br>
+          <br>
+          <span>Organisation d’activités sportives et artistiques</span> à destination d’enfants libanais et syriens
+          dans le cadre du dialogue intercommunautaire porté par Yalla!<br>
         </p>
         <div class="do-more">
           <span>Ecouter</span>
@@ -68,32 +74,27 @@
 
   <section class="donate">
     <div class="text">
-      <h3>L'aide humanitaire</h3>
+      <h3>Faites un don à Yalla!</h3>
       <p>
-        Convie le samedi 29 octobre à un fest-noz de levée de fonds dont les entiers bénéfices reviendront à son école d’Aley, située au Liban.
+        C’est simple et rapide, tout nous est reversé (pas de commission), et les dons sont déductibles d’impôts !
       </p>
       <a href="" target="_blank">Faire un don</a>
     </div>
   </section>
 
   <section class="last-news">
-    <article class="last-news">
+    <article class="news">
       <div class="photos">
-        <div class="photo"></div>
-        <h3>L'aide humanitaire de proximité</h3>
+        <img src="{{ asset("/uploads/images/articles/#{news.image}") }}" class="photo">
       </div>
 
       <div class="text">
-        <div class="do-more">
-          <i class="read"></i>
-          <span>Lire la suite</span>
-        </div>
-        <p class="">
-          <span class="drop-cap">P</span>our les Enfants vous convie le samedi 29 octobre à un fest-noz de levée de fonds dont les entiers bénéfices reviendront à son école d’Aley, située au Liban, à quelques kilomètres.
-        </p>
+        <span class="date">{{ news.createdAt|localizeddate('full', 'none', app.request.locale) }}</span>
+        <h3>{{ news.title }}</h3>
         <p>
-          Nowadays, making printed materials have become fast, easy and simple. If you want your promotional material to be an eye-catching object, you should make it colored. By way of using inkjet printer this is not hard to make.
+          {{ news.synopsis|raw }}
         </p>
+        <a href="">En savoir plus ></a>
       </div>
     </article>
   </section>

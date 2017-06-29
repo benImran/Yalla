@@ -20,11 +20,18 @@ class PageController extends BaseController
     /**
      * @Route("/", name="homepage")
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         $this->setSonataSeo($this->getPageInfo("homepage"));
 
-        return $this->render('pages/index.html.twig', []);
+        $locale = $request->getLocale();
+
+        $news = self::$em->getRepository('AppBundle:Article')
+            ->findOneBy(['lang' => $locale], ['id' => 'DESC']);
+
+        return $this->render('pages/index.html.twig', [
+            "news" => $news
+        ]);
     }
 
     /**
