@@ -19,9 +19,16 @@ class ArticleController extends BaseController
     {
         $locale = $request->getLocale();
 
-        $dql   = "SELECT a FROM AppBundle:Article a WHERE a.lang=:locale";
-        $query = self::$em->createQuery($dql);
-        $query->setParameter("locale", $locale);
+//        $dql   = "SELECT a FROM AppBundle:Article a WHERE a.lang=:locale";
+//        $query = self::$em->createQuery($dql);
+        $em = $this->getDoctrine()->getManager();
+        $article = $em->getRepository('AppBundle:Article');
+        $query = $article->createQueryBuilder('bb')
+            ->orderBy('bb.id', 'DESC')->getQuery();
+
+        $list = $query->getResult();
+
+       // $query->setParameter("locale", $locale);
         /** @var Paginator $paginator */
         $paginator = $this->get('knp_paginator');
 
@@ -29,7 +36,7 @@ class ArticleController extends BaseController
             ->findOneBy(['lang' => $locale], ['id' => 'DESC']);
 
         $pagination = $paginator->paginate(
-            $query,
+            $list,
             $request->query->getInt('page', 1),
             6
 
