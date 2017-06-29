@@ -42,7 +42,7 @@ class ArticleController extends BaseController
     }
 
     /**
-     * @Route("/blog/{slug}")
+     * @Route("/blog/{slug}", name="blog_article")
      */
     public function showAction($slug)
     {
