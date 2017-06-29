@@ -81,7 +81,7 @@
       <a href="" target="_blank">Faire un don</a>
     </div>
   </section>
-
+{% if news %}
   <section class="last-news">
     <article class="news">
       <div class="photos">
@@ -98,6 +98,7 @@
       </div>
     </article>
   </section>
+{% endif %}
 </div>
 {% endblock %}
 {% block javascripts %}

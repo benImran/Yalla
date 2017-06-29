@@ -7,13 +7,27 @@
             <div class="burger-stroke"></div>
         </div>
 
+        <a href="{{ path("homepage") }}">
+            <h1>
+                <img src="{{ asset('img/img-layout/mini-logo-yalla.png') }}" class="logo">
+            </h1>
+        </a>
+
         <nav class="sidenav">
+
+            <a href="https://www.w4.org/fr/project/empecher-la-descolarisation-des-enfants-syriens-refugies/" target="_blank" class="give"><span>Donner</span></a>
+
             <ul class="inlinks">
                 <li><a href="{{ path('about') }}">{{ "menu.about"|trans() }}</a></li>
                 <li><a href="{{ path('mission') }}">{{ "menu.mission"|trans() }}</a></li>
                 <li><a href="{{ path('project') }}">{{ "menu.project"|trans() }}</a></li>
                 <li><a href="{{ path('blog') }}">{{ "menu.blog"|trans() }}</a></li>
                 <li><a href="{{ path('contact') }}">{{ "menu.contact"|trans() }}</a></li>
+            </ul>
+
+            <ul class="lang">
+                <a href="{{ path("homepage") }}"><li class="active" id="fr">Fr</li></a>
+                <a href="{{ path("homepage", { "_locale": "en" }) }}"><li id="en">En</li></a>
             </ul>
 
             <div class="outlinks">
