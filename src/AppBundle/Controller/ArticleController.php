@@ -29,7 +29,7 @@ class ArticleController extends BaseController
         $pagination = $paginator->paginate(
             $query,
             $request->query->getInt('page', 1),
-            8
+            4
 
         );
 
