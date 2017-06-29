@@ -17,14 +17,16 @@ class ArticleController extends BaseController
      */
     public function listAction(Request $request)
     {
-        $em    = $this->get('doctrine.orm.entity_manager');
-        $dql   = "SELECT a FROM AppBundle:Article a";
-        $query = $em->createQuery($dql);
+        $locale = $request->getLocale();
+
+        $dql   = "SELECT a FROM AppBundle:Article a WHERE a.lang=:locale";
+        $query = self::$em->createQuery($dql);
+        $query->setParameter("locale", $locale);
         /** @var Paginator $paginator */
         $paginator = $this->get('knp_paginator');
 
-        $news = $em->getRepository('AppBundle:Article')
-            ->findOneBy([], ['id' => 'DESC']);
+        $news = self::$em->getRepository('AppBundle:Article')
+            ->findOneBy(['lang' => $locale], ['id' => 'DESC']);
 
         $pagination = $paginator->paginate(
             $query,

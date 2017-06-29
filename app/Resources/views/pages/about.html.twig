@@ -1,112 +1,67 @@
 {% extends "base.html.twig" %}
-
-{#Nous connaître - Yalla pour les enfants#}
-
-
 {% block body %}
-    <section class="aboutus">
-        <h3>Nous connaître</h3>
-        <div class="background"></div>
+   <section class="aboutus">
+        <h2>Nous connaitre</h2>
         <div class="text">
-            <h2>Qui sommes nous?</h2>
-            <h1>L'aide humanitaire</h1>
-            <p><span>N</span>ous les Enfants vous convie le samedi 29 octobre
-                à un fest-noz de levée de fonds dont les entiers bénéfices reviendront à son école
-                d’Aley, située au Liban,
-                à quelques kilomètres. Afin de garantir l’efficacité et la pérennité de ses projets,
-                Yalla ! implique les.</p>
-            <p>Tout enfant et tout bénévole est considéré par Yalla ! de la même façon, quelque soit
-                son sexe, sa nationalité
-                ou son appartenance ethnique ou religieuse. Yalla ! promeut l’égalité fille-garçon à
-                travers ses activités et enseignements.
-                La mixité au sein des équipes de bénévoles est également un impératif.</p>
+            <h4>Qui sommes nous?</h4>
+            <h3>L'association</h3>
+            <div class="p-container">
+                <p><span class="drop-cap">T</span>out enfant et tout bénévole est considéré par Yalla ! de la même façon, quelque soit son sexe, sa nationalité ou son appartenance ethnique ou religieuse. Yalla ! promeut l’égalité fille-garçon à travers ses activités et enseignements. La mixité au sein des équipes de bénévoles est également un impératif.</p>
+            </div>
         </div>
         <a>AIDEZ-NOUS</a>
     </section>
-
     <section class="contexte">
         <div>
-            <h2>Contexte</h2>
-            <p><span>H</span>auts les Enfants vous</p>
-            <p>convie le samedi 29 octobre à un fest-noz de levée de fonds dont les entiers
-                bénéfices reviendront à son école d’Aley,
-                située au Liban, à quelques kilomètres. Afin de garantir l’efficacité et la
-                pérennité de ses projets, Yalla ! implique les.</p>
-            <img src="{{ asset('img/img-content/map-syria.png') }}">
+            <h4>Contexte</h4>
+            <p>
+                <span class="drop-cap">L</span>e conflit syrien: La Syrie a sombré dans la guerre à la suite d’un soulèvement populaire, débuté en mars 2011 dans le contexte du printemps arabe. Quatre ans plus tard, on compte 130 000 morts, 4 millions de réfugiés et plus six millions de déplacés internes.
+            </p>
+            <img src="dist/img/img-content/map-syria.png" alt="map syria" title="map syria">
             <div class="do-more"><span>Ecouter</span> <i class="listen"></i></div>
         </div>
+        <div class="background"></div>
         <div>
-            <div class="background"></div>
-            <p>Tout enfant et tout bénévole est considéré par Yalla ! de la même façon, quelque soit
-                son sexe,
-                sa nationalité ou son appartenance ethnique ou religieuse. Yalla ! promeut l’égalité
-                fille-garçon
-                à travers ses activités et enseignements. La mixité au sein des équipes de bénévoles
-                est également un impératif.</p>
+            <p>Notre objectif: scolariser le plus grand nombre d’enfants syriens dans le respect des principes de laïcité et d’égalité, en harmonie avec leur communauté d’accueil.</p>
         </div>
     </section>
 
     <section class="philosophie">
-        <h2>Philosophie</h2>
+        <h4>Philosophie</h4>
+        <h3>Nos valeurs</h3>
         <div>
-            <p><span>H</span>auts les Enfants la pérennité de Tout enfant et tout bénévole est
-                considéré par Yalla ! de la même façon, quelque soit son sexe, sa nationalité ou son
-                appartenance ethnique ou religieuse. Yalla ! promeut l’égalité fille-garçon à
-                travers ses activités et enseignements.
-                La mixité au sein des équipes de bénévoles est également un impératif que se
-                donneLaïcité et apolitisme : La religion
-                et la politique sont absentes des enseignements et activités dispensés par Yalla !
-                afin que tout enfant et tout bénévole
-                participant aux projets se sent accueilli et respecté quelles que soient ses
-                opinions religieuses ou politiques.</p>
-            <p> Egalité : Tout enfant et tout bénévole est considéré par Yalla ! de la même façon,
-                quelque soit son sexe, sa nationalité ou
-                son appartenance ethnique ou religieuse. Yalla ! promeut l’égalité fille-garçon à
-                travers ses activités et enseignements.
-                La mixité au sein des équipes de bénévoles est également un impératif que se donne
-                Yalla !. </p>
-        </div>
-        <div>
-            <p>Tout enfant et tout bénévole est considéré par Yalla ! de la même façon, quelque soit
-                son sexe, sa nationalité ou son
-                appartenance ethnique ou religieuse. Yalla ! promeut l’égalité fille-garçon à
-                travers ses activités et enseignements.
-                La mixité au sein des équipes de bénévoles est également un impératif que se
-                donneLaïcité et apolitisme : La religion
-                et la politique sont absentes des enseignements et activités dispensés par Yalla !
-                afin que tout enfant et tout bénévole
-                participant aux projets se sent accueilli et respecté quelles que soient ses
-                opinions religieuses ou politiques.</p>
-            <p>Egalité : Tout enfant et tout bénévole est considéré par Yalla ! de la même façon,
-                quelque soit son sexe, sa nationalité ou
-                son appartenance ethnique ou religieuse. Yalla ! promeut l’égalité fille-garçon à
-                travers ses activités et enseignements.
-                La mixité au sein des équipes de bénévoles est également un impératif que se donne
-                Yalla !. </p>
+            <p><span class="valor">Les droits de l’enfant :</span> Les missions de Yalla ! sont guidées par le respect et la mise en œuvre des droits fondamentaux de l’enfant tels que définis dans la Convention internationale des droit de l’enfant de 1989.<br>
+                <br>
+                <span class="valor">Laïcité et apolitisme :</span> La religion et la politique sont absentes des enseignements et activités dispensés par Yalla ! afin que tout enfant et tout bénévole participant aux projets se sent accueilli et respecté quelles que soient ses opinions religieuses ou politiques.</p>
+
+            <p><span class="valor">Egalité :</span> Tout enfant et tout bénévole est considéré par Yalla ! de la même façon, quelque soit son sexe, sa nationalité ou son appartenance ethnique ou religieuse. Yalla ! promeut l’égalité fille-garçon à travers ses activités et enseignements. La mixité au sein des équipes de bénévoles est également un impératif que se donne Yalla !.<br>
+                <br>
+                <span class="valor">Transparence :</span> Yalla ! est responsable, vis-à-vis de ses donateurs et des bénéficiaires de l’aide, de la manière dont elle met en œuvre sa mission et gère ses comptes.
+            </p>
         </div>
     </section>
 
     <section class="equipe">
-        <h3>L'équipe</h3>
+        <h4>L'quipe</h4>
         <div>
             <div>
-                <img src="{{ asset('img/img-content/mary.jpg') }}">
-                <h4>MARY LEMELAND-MELLIONEC</h4>
+                <img src="dist/img/img-content/mary.jpg" alt="Photo d'une femme" title="Mary travaille pour l'association">
+                <h5>MARY LEMELAND-MELLIONEC</h5>
                 <p>Présidente de l’association</p>
             </div>
             <div>
-                <img src="{{ asset('img/img-content/melina.jpg') }}">
-                <h4>MÉLINA PELE</h4>
+                <img src="dist/img/img-content/melina.jpg" alt="Photo d'une femme" title="Mélina travaille pour l'association">
+                <h5>MÉLINA PELE</h5>
                 <p>Vice-présidente & référente communication</p>
             </div>
             <div>
-                <img src="{{ asset('img/img-content/sophie.jpg') }}">
-                <h4>SOPHIE FANUCCHI</h4>
+                <img src="dist/img/img-content/sophie.jpg" alt="Photo d'une femme" title="Sophie travaille pour l'association">
+                <h5>SOPHIE FANUCCHI</h5>
                 <p>Secrétaire & référente juridique</p>
             </div>
             <div>
-                <img src="{{ asset('img/img-content/pierre.jpg') }}">
-                <h4>PIERRE LEMELAND</h4>
+                <img src="dist/img/img-content/pierre.jpg" alt="Photo d'un homme" title="Pierre travaille pour l'association">
+                <h5>PIERRE LEMELAND</h5>
                 <p>Trésorier</p>
             </div>
         </div>
@@ -114,32 +69,25 @@
 
     <section class="fonctionnement">
         <div>
-            <h2>Fonctionnement</h2>
-            <p>The Luxury Of Traveling With Yacht Charter Companies</p>
+            <h4>Fonctionnement</h4>
+            <p>Les bénévoles de Yalla ! à Paris et sur le terrain ont préalablement adopté les valeurs de l’association et agissent conformément à ses principes.</p>
         </div>
     </section>
 
     <section class="titre">
         <div>
-            <h2>Titre de la partie</h2>
-            <p><span>H</span>auts les Enfants vous t la pérennité de Tout enfant et tout bénévole
-                est considéré par Yalla ! de la même façon, quelque soit son sexe, sa nationalité ou
-                son
-                appartenance ethnique ou religieuse. Yalla ! promeut l’égalité fille-garçon à
-                travers ses activités et enseignements.
-                La mixité au sein des équipes de bénévoles est également un impératif que se
-                donneLaïcité et apolitisme : La religion
-                et la politique sont absentes des enseignements et activités dispensés par Yalla !
-                afin que tout enfant et tout bénévole
-                participant aux projets se sent accueilli et respecté quelles que soient ses
-                opinions religieuses ou politiques.</p>
-            <img src="{{ asset('img/img-content/aboutus4.jpg') }}">
+            <h3>Notre vision</h3>
+            <p><span class="drop-cap">D</span>évelopper la solidarité internationale en créant un pont entre les sociétés civiles en mesure de d’aider et celles qui en ont besoin.<br>
+                <br>
+                ⇒ Grâce à une structure rationalisée, au plus près des donateurs et des bénéficiaires, Yalla ! permet aux membres de la société civile solidaire de visualiser l’impact de leurs dons.<br>
+                <br>
+                ⇒ Afin de garantir l’efficacité et la pérennité de ses projets, Yalla ! implique les bénéficiaires de l’aide à toutes les étapes du développement du projet, de l’élaboration à l’évaluation.</p>
+            <img src="dist/img/img-content/aboutus4.jpg" alt="Fille qui sourit" title="Un enfant aidé par l'association" >
         </div>
         <div>
-            <img src="{{ asset('img/img-content/aboutus3.jpg') }}">
-            <p class="guillemet">''</p>
-            <p>“The Luxury Of Traveling With Yacht Charter Companies”</p>
+            <img src="dist/img/img-content/aboutus3.jpg" alt="Garçon qui sourit" title="Un enfant aidé par l'association">
+            <p class="guillemet">‘‘</p>
+            <p>“L'aide humanitaire de proximité”</p>
         </div>
     </section>
-</div>
 {% endblock %}
