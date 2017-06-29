@@ -1,4 +1,5 @@
 {% extends "base.html.twig" %}
+
 {% block body %}
    <section class="aboutus">
         <h2>Nous connaitre</h2>
@@ -17,7 +18,7 @@
             <p>
                 <span class="drop-cap">L</span>e conflit syrien: La Syrie a sombré dans la guerre à la suite d’un soulèvement populaire, débuté en mars 2011 dans le contexte du printemps arabe. Quatre ans plus tard, on compte 130 000 morts, 4 millions de réfugiés et plus six millions de déplacés internes.
             </p>
-            <img src="dist/img/img-content/map-syria.png" alt="map syria" title="map syria">
+            <img src="{{ asset("img/img-content/map-syria.png") }}" alt="map syria" title="map syria">
             <div class="do-more"><span>Ecouter</span> <i class="listen"></i></div>
         </div>
         <div class="background"></div>
@@ -45,22 +46,26 @@
         <h4>L'quipe</h4>
         <div>
             <div>
-                <img src="dist/img/img-content/mary.jpg" alt="Photo d'une femme" title="Mary travaille pour l'association">
+                <img src="{{ asset("img/img-content/mary.jpg") }}" alt="Photo d'une femme" title="Mary travaille pour
+                l'association">
                 <h5>MARY LEMELAND-MELLIONEC</h5>
                 <p>Présidente de l’association</p>
             </div>
             <div>
-                <img src="dist/img/img-content/melina.jpg" alt="Photo d'une femme" title="Mélina travaille pour l'association">
+                <img src="{{ asset("img/img-content/melina.jpg") }}" alt="Photo d'une femme" title="Mélina travaille pour
+                 l'association">
                 <h5>MÉLINA PELE</h5>
                 <p>Vice-présidente & référente communication</p>
             </div>
             <div>
-                <img src="dist/img/img-content/sophie.jpg" alt="Photo d'une femme" title="Sophie travaille pour l'association">
+                <img src="{{ asset("img/img-content/sophie.jpg") }}" alt="Photo d'une femme" title="Sophie travaille pour
+                 l'association">
                 <h5>SOPHIE FANUCCHI</h5>
                 <p>Secrétaire & référente juridique</p>
             </div>
             <div>
-                <img src="dist/img/img-content/pierre.jpg" alt="Photo d'un homme" title="Pierre travaille pour l'association">
+                <img src="{{ asset("img/img-content/pierre.jpg") }}" alt="Photo d'un homme" title="Pierre travaille pour
+                l'association">
                 <h5>PIERRE LEMELAND</h5>
                 <p>Trésorier</p>
             </div>
@@ -82,10 +87,12 @@
                 ⇒ Grâce à une structure rationalisée, au plus près des donateurs et des bénéficiaires, Yalla ! permet aux membres de la société civile solidaire de visualiser l’impact de leurs dons.<br>
                 <br>
                 ⇒ Afin de garantir l’efficacité et la pérennité de ses projets, Yalla ! implique les bénéficiaires de l’aide à toutes les étapes du développement du projet, de l’élaboration à l’évaluation.</p>
-            <img src="dist/img/img-content/aboutus4.jpg" alt="Fille qui sourit" title="Un enfant aidé par l'association" >
+            <img src="{{ asset("img/img-content/aboutus4.jpg") }}" alt="Fille qui sourit" title="Un enfant aidé par
+            l'association" >
         </div>
         <div>
-            <img src="dist/img/img-content/aboutus3.jpg" alt="Garçon qui sourit" title="Un enfant aidé par l'association">
+            <img src="{{ asset("img/img-content/aboutus3.jpg") }}" alt="Garçon qui sourit" title="Un enfant aidé par
+            l'association">
             <p class="guillemet">‘‘</p>
             <p>“L'aide humanitaire de proximité”</p>
         </div>
