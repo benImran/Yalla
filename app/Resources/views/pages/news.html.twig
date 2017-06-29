@@ -1,17 +1,22 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
+    <div class="news__wrapper">
         <section class="last-news2">
             <h2>Nos articles</h2>
-                <a href="">
+                <a href="{{ path("blog_article", { "slug": news.slug}) }}">
                     <article class="news">
+                        <div class="photos">
+                          <img class="photo" src="{{ asset("/uploads/images/articles/#{news.image}") }}" alt="">
+                        </div>
+                      <div class="text">
                         <span class="date">{{ news.createdAt|localizeddate('full', 'none', app.request.locale) }}</span>
                         <h3>{{ news.title }}</h3>
-
-                        <img src="{{ asset("/uploads/images/articles/#{news.image}") }}" alt="">
                         <p>
-                            {{ news.synopsis|raw }}
+                          {{ news.synopsis|raw }}
                         </p>
+                        <span class="link">En savoir plus</span>
+                      </div>
                     </article>
                 </a>
         </section>
@@ -20,28 +25,23 @@
         <h4>Tous nos articles</h4>
 
         <div class="news-container">
-            <div class="count">
-                {{ pagination.getTotalItemCount }} pages
-            </div>
             {% for article in pagination %}
-                <a href="">
+                <a href="{{ path("blog_article", { "slug": article.slug}) }}">
                     <article class="news">
                         <span class="date">{{ article.createdAt|localizeddate('full', 'none', app.request.locale) }}</span>
                         <h3>{{ article.title }}</h3>
 
-                        <img src="{{ asset("/uploads/images/articles/#{article.image}") }}" alt="">
+                        <img class="photo" src="{{ asset("/uploads/images/articles/#{article.image}") }}" alt="">
                         <p>
                             {{ article.synopsis|raw }}
                         </p>
                     </article>
                 </a>
             {% endfor %}
-            <div class="navigation">
-                {{ knp_pagination_render(pagination) }}
-            </div>
-
+        </div>
+        <div class="navigation">
+          {{ knp_pagination_render(pagination) }}
         </div>
       </section>
-
     </div>
 {% endblock %}
