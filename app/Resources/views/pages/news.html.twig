@@ -12,11 +12,6 @@
                       <div class="text">
                         <span class="date">{{ news.createdAt|localizeddate('full', 'none', app.request.locale) }}</span>
                         <h3>{{ news.title }}</h3>
-<<<<<<< HEAD
-
-                        <img src="{{ asset("/uploads/images/articles/#{news.image}") }}" class="photo" alt="">
-=======
->>>>>>> 8f19bd366eb5e8c251ea023316622ddbd4643aab
                         <p>
                           {{ news.synopsis|raw }}
                         </p>
@@ -36,11 +31,7 @@
                         <span class="date">{{ article.createdAt|localizeddate('full', 'none', app.request.locale) }}</span>
                         <h3>{{ article.title }}</h3>
 
-<<<<<<< HEAD
-                        <img src="{{ asset("/uploads/images/articles/#{article.image}") }}" class="photo" alt="">
-=======
                         <img class="photo" src="{{ asset("/uploads/images/articles/#{article.image}") }}" alt="">
->>>>>>> 8f19bd366eb5e8c251ea023316622ddbd4643aab
                         <p>
                             {{ article.synopsis|raw }}
                         </p>
