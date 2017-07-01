@@ -1,7 +1,3 @@
-yalla
-=====
+#  Yalla !
 
 Maxime, Benchaa, Anthony, Lea, Sebastien
-
-# Yalla
-# Yalla
