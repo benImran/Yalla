@@ -28,7 +28,7 @@ class ArticleController extends BaseController
 
         $list = $query->getResult();
 
-       // $query->setParameter("locale", $locale);
+        // $query->setParameter("locale", $locale);
         /** @var Paginator $paginator */
         $paginator = $this->get('knp_paginator');
 

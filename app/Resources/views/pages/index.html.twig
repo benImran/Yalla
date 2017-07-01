@@ -82,24 +82,24 @@
     </div>
   </section>
 {% if news %}
-  <section class="last-news2 index">
-    <a href="{{ path("blog_article", { "slug": news.slug}) }}">
-      <article class="news">
-        <div class="photos">
-          <img class="photo" src="{{ asset("/uploads/images/articles/#{news.image}") }}" alt="">
-        </div>
-        <div class="text">
-          <span class="date">{{ news.createdAt|localizeddate('full', 'none', app.request.locale) }}</span>
-          <h3>{{ news.title }}</h3>
-          <p>
-              {{ news.synopsis|raw }}
-          </p>
-          <span class="link">En savoir plus</span>
-        </div>
-      </article>
-    </a>
+  <section class="last-news">
+    <article class="news">
+      <div class="photos">
+        <img src="{{ asset("/uploads/images/articles/#{news.image}") }}" class="photo">
+      </div>
+
+      <div class="text">
+        <span class="date">{{ news.createdAt|localizeddate('full', 'none', app.request.locale) }}</span>
+        <h3>{{ news.title }}</h3>
+        <p>
+          {{ news.synopsis|raw }}
+        </p>
+        <a href="">En savoir plus ></a>
+      </div>
+    </article>
   </section>
 {% endif %}
+</div>
 {% endblock %}
 {% block javascripts %}
   {{ parent() }}
