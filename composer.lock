@@ -4153,24 +4153,24 @@
         },
         {
             "name": "nelmio/alice",
-            "version": "v3.0.0-RC.0",
+            "version": "v3.0.0-RC.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nelmio/alice.git",
-                "reference": "32d327e7ae5fe12c6db0c7d90a64a3437d34b7d0"
+                "reference": "8c7cc34a11888c7c96096164665b53b615e50cce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nelmio/alice/zipball/32d327e7ae5fe12c6db0c7d90a64a3437d34b7d0",
-                "reference": "32d327e7ae5fe12c6db0c7d90a64a3437d34b7d0",
+                "url": "https://api.github.com/repos/nelmio/alice/zipball/8c7cc34a11888c7c96096164665b53b615e50cce",
+                "reference": "8c7cc34a11888c7c96096164665b53b615e50cce",
                 "shasum": ""
             },
             "require": {
                 "fzaninotto/faker": "^1.6",
                 "myclabs/deep-copy": "^1.5.2",
-                "php": "7.0 - 7.1",
+                "php": "^7.0",
                 "symfony/property-access": "^2.7.11||^3.0",
-                "symfony/yaml": "^2.0||^3.0"
+                "symfony/yaml": "^2.7||^3.0"
             },
             "require-dev": {
                 "bamarni/composer-bin-plugin": "^1.1.0",
@@ -4222,7 +4222,7 @@
                 "faker",
                 "test"
             ],
-            "time": "2017-05-21T14:44:42+00:00"
+            "time": "2017-06-28T23:22:17+00:00"
         },
         {
             "name": "sensio/generator-bundle",
@@ -4342,29 +4342,39 @@
         },
         {
             "name": "theofidry/alice-data-fixtures",
-            "version": "v1.0.0-beta.4",
+            "version": "v1.0.0-beta.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/theofidry/AliceDataFixtures.git",
-                "reference": "3cc2ea7acfa869b0c9e2c746fe7a72973533bf19"
+                "reference": "788b8364e5e7fdd527376c06863c4dce2550b456"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/theofidry/AliceDataFixtures/zipball/3cc2ea7acfa869b0c9e2c746fe7a72973533bf19",
-                "reference": "3cc2ea7acfa869b0c9e2c746fe7a72973533bf19",
+                "url": "https://api.github.com/repos/theofidry/AliceDataFixtures/zipball/788b8364e5e7fdd527376c06863c4dce2550b456",
+                "reference": "788b8364e5e7fdd527376c06863c4dce2550b456",
                 "shasum": ""
             },
             "require": {
-                "nelmio/alice": "^3.0@beta",
-                "php": "~7.0.0 || ~7.1.0"
+                "nelmio/alice": "^3.0-rc1@rc",
+                "php": "^7.0.0"
             },
             "require-dev": {
                 "bamarni/composer-bin-plugin": "^1.0",
-                "phpunit/phpunit": "^5.5",
-                "symfony/phpunit-bridge": "^3.1"
+                "phpspec/prophecy": "^1.7",
+                "phpunit/phpunit": "^6.0",
+                "symfony/phpunit-bridge": "^3.3.2"
             },
             "suggest": {
-                "doctrine/orm": "To use Doctrine ORM"
+                "alcaeus/mongo-php-adapter": "To use Doctrine with the MongoDB flavour",
+                "doctrine/data-fixtures": "To use Doctrine",
+                "doctrine/dbal": "To use Doctrine with the PHPCR flavour",
+                "doctrine/mongodb": "To use Doctrine with the MongoDB flavour",
+                "doctrine/mongodb-odm": "To use Doctrine with the MongoDB flavour",
+                "doctrine/orm": "To use Doctrine ORM",
+                "doctrine/phpcr-odm": "To use Doctrine with the PHPCR flavour",
+                "illuminate/database": "To use Eloquent",
+                "jackalope/jackalope-doctrine-dbal": "To use Doctrine with the PHPCR flavour",
+                "ocramius/proxy-manager": "To avoid database connection on kernel boot"
             },
             "type": "library",
             "extra": {
@@ -4373,9 +4383,7 @@
                 },
                 "branch-alias": {
                     "dev-master": "1.x-dev"
-                },
-                "bin-dir": "bin",
-                "sort-packages": true
+                }
             },
             "autoload": {
                 "psr-4": {
@@ -4402,7 +4410,7 @@
                 "orm",
                 "tests"
             ],
-            "time": "2016-12-16T23:35:38+00:00"
+            "time": "2017-06-29T19:46:38+00:00"
         }
     ],
     "aliases": [],

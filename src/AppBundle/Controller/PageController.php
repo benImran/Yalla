@@ -76,6 +76,7 @@ class PageController extends BaseController
         return $this->render('pages/contact.html.twig', []);
     }
 
+
     public function getPageInfo($page)
     {
         return self::$em->getRepository("AppBundle:Page")
